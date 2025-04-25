@@ -12,7 +12,7 @@ func interact() -> void:
 	for entity in find_entities_at_position(grid_position + orientation):
 		if entity is InteractuableEntity:
 			var interactuable: InteractuableEntity = entity
-			print_debug(entity.name)
+			interactuable.being_interacted()
 			break
 
 func idle_logic() -> void:

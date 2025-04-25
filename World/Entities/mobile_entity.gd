@@ -8,7 +8,7 @@ var velocity: Vector2i = Vector2i.ZERO
 var orientation: Vector2i = Vector2i.DOWN
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	direction = Vector2i.ZERO
 	if Input.is_action_pressed("move_left"):
 		direction = Vector2i.LEFT
@@ -69,8 +69,3 @@ func stand_animation() -> void:
 		animation_player.play("stand_up")
 	if orientation == Vector2i.DOWN:
 		animation_player.play("stand_down")
-
-
-func _on_animation_finished(anim_name: StringName) -> void:
-	if velocity == Vector2i.ZERO:
-		stand_animation()

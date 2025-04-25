@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=4 uid="uid://brjuyuiov4lss"]
+[gd_scene load_steps=19 format=4 uid="uid://brjuyuiov4lss"]
 
 [ext_resource type="Texture2D" uid="uid://dpbxhv1nyxlmq" path="res://resources/aseprite/tileset.png" id="1_dxwrw"]
 [ext_resource type="Texture2D" uid="uid://d34epkemkjrca" path="res://resources/aseprite/character.png" id="2_g5360"]
-[ext_resource type="Script" uid="uid://g3eano32evsm" path="res://World/Player/player.gd" id="2_kikhk"]
-[ext_resource type="Script" uid="uid://b7s7drqhfdrjv" path="res://World/Entities/interactuable_entity.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://g3eano32evsm" path="res://world/player/player.gd" id="2_kikhk"]
+[ext_resource type="Script" uid="uid://b7s7drqhfdrjv" path="res://world/entities/interactuable_entity.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://3g7iu345thyg" path="res://world/interactions/start_dialogue.gd" id="5_lquwl"]
+[ext_resource type="Resource" uid="uid://capwx4i7nk81b" path="res://resources/dialogue/sign_example.dialogue" id="6_7mycd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aolye"]
 texture = ExtResource("1_dxwrw")
@@ -434,4 +436,8 @@ one_shot = true
 position = Vector2(232, 88)
 script = ExtResource("4_1bvp3")
 
-[connection signal="animation_finished" from="Player/AnimationPlayer" to="Player" method="_on_animation_finished"]
+[node name="Dialogue" type="Node" parent="Sign"]
+script = ExtResource("5_lquwl")
+dialogue = ExtResource("6_7mycd")
+
+[connection signal="interacted" from="Sign" to="Sign/Dialogue" method="interacted"]
