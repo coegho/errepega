@@ -8,18 +8,6 @@ var velocity: Vector2i = Vector2i.ZERO
 var orientation: Vector2i = Vector2i.DOWN
 
 
-func _process(_delta: float) -> void:
-	direction = Vector2i.ZERO
-	if Input.is_action_pressed("move_left"):
-		direction = Vector2i.LEFT
-	if Input.is_action_pressed("move_right"):
-		direction = Vector2i.RIGHT
-	if Input.is_action_pressed("move_up"):
-		direction = Vector2i.UP
-	if Input.is_action_pressed("move_down"):
-		direction = Vector2i.DOWN
-
-
 func _physics_process(delta: float) -> void:
 	if velocity != Vector2i.ZERO:
 		walk_logic(delta)
@@ -48,7 +36,6 @@ func idle_logic() -> void:
 
 func turn_around() -> void:
 	orientation = direction
-	stand_animation()
 
 func walk_animation() -> void:
 	if orientation == Vector2i.LEFT:

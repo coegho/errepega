@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=3 uid="uid://p0f5gent32ft"]
+
+[ext_resource type="Script" uid="uid://68uoh3fd6625" path="res://ui/conflict/conflict_scene.gd" id="1_1f0hg"]
+[ext_resource type="FontFile" uid="uid://cx6rhtqc4s76h" path="res://resources/fonts/m5x7.ttf" id="1_j06hs"]
+[ext_resource type="Texture2D" uid="uid://ktgygxrko26t" path="res://resources/aseprite/sprite_test.png" id="2_smmoj"]
+[ext_resource type="Texture2D" uid="uid://3delf3p2xcml" path="res://resources/aseprite/dialogue_panel.png" id="3_j06hs"]
+[ext_resource type="Texture2D" uid="uid://cir5q2cngv1mr" path="res://resources/aseprite/character_sprite.png" id="4_rhbie"]
+[ext_resource type="Texture2D" uid="uid://blh5t3ca3hw82" path="res://resources/aseprite/spoon.png" id="5_cxid7"]
+
+[sub_resource type="Theme" id="Theme_cxid7"]
+Label/colors/font_color = Color(0.133333, 0.12549, 0.203922, 1)
+Label/fonts/font = ExtResource("1_j06hs")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxid7"]
+atlas = ExtResource("5_cxid7")
+region = Rect2(0, 0, 8, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhbie"]
+atlas = ExtResource("5_cxid7")
+region = Rect2(8, 0, 8, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kn05"]
+atlas = ExtResource("5_cxid7")
+region = Rect2(16, 0, 8, 0)
+
+[node name="ConflictScene" type="CanvasLayer"]
+script = ExtResource("1_1f0hg")
+
+[node name="Root" type="Control" parent="."]
+custom_minimum_size = Vector2(160, 144)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_cxid7")
+
+[node name="ColorRect" type="ColorRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EnemySprite" type="TextureRect" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 50.0
+grow_horizontal = 0
+texture = ExtResource("2_smmoj")
+
+[node name="PlayerSprite" type="TextureRect" parent="Root"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = -42.0
+offset_right = 53.0
+offset_bottom = 8.0
+grow_vertical = 2
+texture = ExtResource("4_rhbie")
+
+[node name="DialoguePlaceholder" type="TextureRect" parent="Root"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_j06hs")
+
+[node name="PlayerName" type="Label" parent="Root"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -19.5
+offset_right = -5.0
+offset_bottom = -6.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Camarada"
+
+[node name="EnemyName" type="Label" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_right = 52.0
+offset_bottom = 13.0
+text = "Test"
+
+[node name="EnemyState" type="Label" parent="Root"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 12.0
+offset_right = 52.0
+offset_bottom = 25.0
+text = "[NORMAL]"
+
+[node name="SpoonBox" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="SpoonPoint1" type="TextureRect" parent="Root/SpoonBox"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_cxid7")
+
+[node name="SpoonPoint2" type="TextureRect" parent="Root/SpoonBox"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_rhbie")
+
+[node name="SpoonPoint3" type="TextureRect" parent="Root/SpoonBox"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_rhbie")
+
+[node name="SpoonPoint4" type="TextureRect" parent="Root/SpoonBox"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_rhbie")
+
+[node name="SpoonPoint5" type="TextureRect" parent="Root/SpoonBox"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_8kn05")
