@@ -287,3 +287,7 @@ one_shot = true
 [node name="BumpTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="step_done" from="." to="." method="_on_step_done"]

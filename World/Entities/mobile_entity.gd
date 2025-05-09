@@ -7,6 +7,8 @@ var direction: Vector2i = Vector2i.ZERO
 var velocity: Vector2i = Vector2i.ZERO
 var orientation: Vector2i = Vector2i.DOWN
 
+signal step_done(final_position: Vector2i)
+
 
 func _physics_process(delta: float) -> void:
 	if velocity != Vector2i.ZERO:
@@ -23,6 +25,7 @@ func walk_logic(delta: float) -> void:
 	if global_position == target_position:
 		orientation = velocity
 		velocity = Vector2i.ZERO
+		step_done.emit(grid_position)
 
 func idle_logic() -> void:
 	if direction != Vector2i.ZERO:

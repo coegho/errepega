@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://byuf1ckh1loyl"
+path="res://.godot/imported/segredos.dialogue-f5d04806d19fc7252b0d096287b00553.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/segredos.dialogue"
+dest_files=["res://.godot/imported/segredos.dialogue-f5d04806d19fc7252b0d096287b00553.tres"]
+
+[params]
+
+defaults=true

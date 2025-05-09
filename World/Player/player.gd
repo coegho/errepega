@@ -52,3 +52,10 @@ func turn_around() -> void:
 	if full_stop:
 		turn_around_timer.start()
 	orientation = direction
+
+
+func _on_step_done(final_position: Vector2i) -> void:
+	var entities := find_entities_at_position(final_position)
+	for entity in entities:
+		if entity is DoorEntity:
+			world.change_location(entity.new_location, entity.starting_position)

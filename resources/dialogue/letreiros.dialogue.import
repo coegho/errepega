@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dcf1iri587jsc"
+path="res://.godot/imported/letreiros.dialogue-53017f3c498704149b784f0bc6c00682.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/letreiros.dialogue"
+dest_files=["res://.godot/imported/letreiros.dialogue-53017f3c498704149b784f0bc6c00682.tres"]
+
+[params]
+
+defaults=true

@@ -1,6 +1,10 @@
 class_name World extends Node2D
 
 @export var conflict_scene: PackedScene
+@export var starting_location: PackedScene
+
+var current_location: Node
+var starting_position: Vector2i = Vector2i.ZERO
 
 var tilemaps: Array[TileMapLayer] = []
 var open_dialogue: bool = false
@@ -12,7 +16,16 @@ func _init() -> void:
 	EventBus.dialogue_ended.connect(_on_dialogue_ended)
 
 func _ready() -> void:
-	for node in find_children("*", "TileMapLayer", false):
+	change_location(starting_location, starting_position)
+
+func change_location(new_location: PackedScene, teleport_to_position: Vector2i) -> void:
+	if current_location:
+		current_location.queue_free()
+	current_location = new_location.instantiate()
+	add_child(current_location)
+	tilemaps = []
+	starting_position = teleport_to_position
+	for node in current_location.find_children("*", "TileMapLayer"):
 		var layer: TileMapLayer = node
 		tilemaps.append(layer)
 

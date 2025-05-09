@@ -1,5 +1,7 @@
 extends Node
 
+var player_name: String = "CAMARADA"
+
 var conflict: Conflict
 
 func start_conflict(conflict_name: String) -> void:

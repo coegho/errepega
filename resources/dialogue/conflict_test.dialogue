@@ -1,5 +1,5 @@
 ~ start
-{{DialogueFunctions.conflict.enemy_name}} quere loitar!
+{{conflict.enemy_name}} quere loitar!
 Que queres facer?
   - Loitar => start
   - Fuxir => END

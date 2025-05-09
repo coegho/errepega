@@ -6,6 +6,7 @@ var world: World
 func _ready() -> void:
 	grid_position = GridMovement.pixel_to_grid(global_position)
 	world = EventBus.get_world()
+	add_to_group("entity")
 
 func find_entities_at_position(test_position: Vector2i) -> Array[Entity]:
 	var array: Array[Entity] = []

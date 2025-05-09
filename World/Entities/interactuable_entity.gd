@@ -1,6 +1,7 @@
 class_name InteractuableEntity extends Entity
 
-signal interacted
+@export var dialogue: DialogueResource
+@export var dialogue_title: String = ""
 
 func being_interacted() -> void:
-	interacted.emit()
+	DialogueManager.show_dialogue_balloon(dialogue, dialogue_title)

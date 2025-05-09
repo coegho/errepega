@@ -1,10 +1,10 @@
 import "res://resources/dialogue/conflict_test.dialogue" as conflict
 
 ~ start
-Cartel: [[Boas|Ola|Saúdos]], son un cartel.
-do DialogueFunctions.start_conflict("test")
+Cartel: [[Boas|Ola|Saúdos]] {{player_name}}, son un cartel.
+do start_conflict("test")
 =>< conflict/start
-do DialogueFunctions.end_conflict()
+do end_conflict()
 Como podes ver podo mostrar abundante texto, até 4 liñas de feito. Si, dixen 4 liñas.
 Tamén fago preguntas.
 - En serio?
