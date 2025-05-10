@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://b5qho3wr3ubsn"]
+[gd_scene load_steps=6 format=4 uid="uid://b5qho3wr3ubsn"]
 
 [ext_resource type="Texture2D" uid="uid://d03gsrslikgv0" path="res://resources/aseprite/tileset_house.png" id="1_e3nud"]
 [ext_resource type="PackedScene" uid="uid://bdnka55ed7m1f" path="res://world/player/player.tscn" id="2_ruq28"]
 [ext_resource type="Script" uid="uid://bjdkfmk2fdell" path="res://world/entities/door_entity.gd" id="3_edo44"]
-[ext_resource type="PackedScene" uid="uid://brjuyuiov4lss" path="res://world/locations/aldea.tscn" id="4_edo44"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qllls"]
 texture = ExtResource("1_e3nud")
@@ -154,6 +153,6 @@ position = Vector2(72, 56)
 [node name="DoorEntity" type="Node2D" parent="."]
 position = Vector2(72, 152)
 script = ExtResource("3_edo44")
-new_location = ExtResource("4_edo44")
+new_location_name = "aldea"
 starting_position = Vector2i(2, 0)
 metadata/_custom_type_script = "uid://bjdkfmk2fdell"

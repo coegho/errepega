@@ -4,6 +4,10 @@ class_name Player extends MobileEntity
 @onready var bump_timer: Timer = $BumpTimer
 var full_stop: bool = true
 
+func _ready() -> void:
+	grid_position = world.starting_position
+	global_position = GridMovement.grid_to_pixel(grid_position)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("action"):
 		interact()
