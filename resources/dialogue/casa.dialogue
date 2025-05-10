@@ -1,0 +1,37 @@
+~ habitacion_nai
+É a habitación da túa nai.
+if not DialogueFunctions.get_var("name_selected"):
+	Sae luz por debaixo da porta. Debeu de erguerse xa.
+=> END
+
+~ cama
+É a túa cama.
+Resistir a tentación de volverte deitar require toda a túa forza de vontade.
+=> END
+
+~ armario
+O teu armario, cheo das túas roupas.
+Queres mudar de roupa?
+- Si
+	Mudas de roupa rapidamente.
+	Por desgraza toda a túa roupa é idéntica, polo que ninguén o vai notar.
+- Non
+=> END
+
+~ estanteria
+A túa libraría.
+Ademais de libros hai varios obxectos persoais de gran valor sentimental.
+=> END
+
+~ paraugas
+Hoxe non dan chuva, non fai falla coller o paraugas.
+=> END
+
+~ estante
+Un estante cheo de cousas, varias delas comestíbeis.
+Canto falta para o xantar...?
+=> END
+
+~ mesa
+Sorprendentemente, trátase dunha mesa.
+=> END

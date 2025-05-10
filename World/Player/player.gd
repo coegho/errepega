@@ -16,7 +16,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		interact()
 
 func _process(delta: float) -> void:
-	if world.open_dialogue:
+	if world.is_movement_blocked():
 		return
 	direction = Vector2i.ZERO
 	if Input.is_action_pressed("move_left"):
@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		direction = Vector2i.DOWN
 
 func interact() -> void:
-	for entity in find_entities_at_position(grid_position + orientation):
+	for entity in world.find_entities_at_position(grid_position + orientation):
 		if entity is InteractuableEntity:
 			var interactuable: InteractuableEntity = entity
 			interactuable.being_interacted()
@@ -62,7 +62,8 @@ func turn_around() -> void:
 
 
 func _on_step_done(final_position: Vector2i) -> void:
-	var entities := find_entities_at_position(final_position)
+	var entities := world.find_entities_at_position(final_position)
 	for entity in entities:
 		if entity is DoorEntity:
-			world.change_location(entity.new_location, entity.starting_position, orientation, entity.starting_velocity)
+			var new_location = ContentLoader.load_location(entity.new_location_name)
+			world.change_location(new_location, entity.starting_position, orientation, entity.starting_velocity)

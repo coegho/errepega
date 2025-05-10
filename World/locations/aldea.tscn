@@ -167,7 +167,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_1jo2i")
 
 [node name="Player" parent="." instance=ExtResource("2_wdsy2")]
-position = Vector2(40, 8)
 
 [node name="Sign" type="Node2D" parent="." groups=["entity"]]
 position = Vector2(88, 40)
@@ -178,7 +177,7 @@ dialogue = ExtResource("4_34wi1")
 position = Vector2(40, -8)
 script = ExtResource("5_wvodu")
 new_location_name = "casa_prota"
-starting_position = Vector2i(4, 8)
+starting_position = Vector2i(5, 8)
 metadata/_custom_type_script = "uid://bjdkfmk2fdell"
 
 [node name="letreiro_casa_prota" type="Node2D" parent="." groups=["entity"]]
@@ -187,35 +186,35 @@ script = ExtResource("3_wvodu")
 dialogue = ExtResource("5_yxtj6")
 dialogue_title = "casa_prota"
 
-[node name="letreiro_casa_nai" type="Node2D" parent="." groups=["entity"]]
+[node name="letreiro_casa_antonia" type="Node2D" parent="." groups=["entity"]]
 position = Vector2(216, 8)
 script = ExtResource("3_wvodu")
 dialogue = ExtResource("5_yxtj6")
-dialogue_title = "casa_nai"
+dialogue_title = "casa_antonia"
 
-[node name="letreiro_casa_antonia" type="Node2D" parent="." groups=["entity"]]
+[node name="letreiro_casa_lau" type="Node2D" parent="." groups=["entity"]]
 position = Vector2(328, 8)
 script = ExtResource("3_wvodu")
 dialogue = ExtResource("5_yxtj6")
-dialogue_title = "casa_prota"
+dialogue_title = "casa_lau"
 
 [node name="letreiro_casa_ignacio" type="Node2D" parent="." groups=["entity"]]
 position = Vector2(104, 184)
 script = ExtResource("3_wvodu")
 dialogue = ExtResource("5_yxtj6")
-dialogue_title = "casa_prota"
+dialogue_title = "casa_ignacio"
 
 [node name="letreiro_casa_amelia" type="Node2D" parent="." groups=["entity"]]
 position = Vector2(360, 184)
 script = ExtResource("3_wvodu")
 dialogue = ExtResource("5_yxtj6")
-dialogue_title = "casa_prota"
+dialogue_title = "casa_amelia"
 
 [node name="letreiro_casa_eladio" type="Node2D" parent="." groups=["entity"]]
 position = Vector2(200, 184)
 script = ExtResource("3_wvodu")
 dialogue = ExtResource("5_yxtj6")
-dialogue_title = "casa_prota"
+dialogue_title = "casa_eladio"
 
 [node name="segredo_item" type="Node2D" parent="." groups=["entity"]]
 position = Vector2(56, -56)

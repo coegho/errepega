@@ -1,5 +1,14 @@
 ~ casa_prota
-CASA DE {{player_name}} => END
-~ casa_nai
-Este letreiro está algo suxo e non se le, pero sabes que esta é a casa da túa nai. => END
+CASA DE {{player_name}}...
+Quen che dera. En realidade é a casa da túa nai. => END
+~ casa_antonia
+CASA DE ANTONIA => END
+~ casa_lau
+CASA DE LAU => END
+~ casa_ignacio
+CASA DE IGNACIO  => END
+~ casa_amelia
+CASA DE AMELIA => END
+~ casa_eladio
+CASA DE ELADIO => END
 => END

@@ -2,14 +2,16 @@ class_name World extends Node2D
 
 @export var conflict_scene: PackedScene
 @export var starting_location: PackedScene
-@export var starting_position: Vector2i = Vector2i.ZERO
+@export var name_select_ui: PackedScene
 
+var starting_position: Vector2i = Vector2i.ZERO
 var current_location: Node
 var starting_orientation: Vector2i = Vector2i.DOWN
 var starting_velocity: Vector2i = Vector2i.ZERO
 
 var tilemaps: Array[TileMapLayer] = []
 var open_dialogue: bool = false
+var open_name_select: bool = false
 var current_conflict: ConflictScene = null
 
 func _init() -> void:
@@ -23,8 +25,8 @@ func _ready() -> void:
 func change_location(
 	new_location: PackedScene,
 	teleport_to_position: Vector2i,
-	new_orientation: Vector2i,
-	new_velocity: Vector2i
+	new_orientation: Vector2i = Vector2i.DOWN,
+	new_velocity: Vector2i = Vector2i.ZERO
 	) -> void:
 	starting_position = teleport_to_position
 	starting_orientation = new_orientation
@@ -39,13 +41,28 @@ func change_location(
 		tilemaps.append(layer)
 
 func is_occupied(grid_position: Vector2i) -> bool:
+	# comprobamos tilemaps
 	for layer in tilemaps:
 		var data := layer.get_cell_tile_data(grid_position)
 		if not data:
 			return true
 		if data.get_custom_data("solid"):
 			return true
+	# comprobamos entidades
+	var entities := find_entities_at_position(grid_position)
+	for entity in entities:
+		if entity.solid:
+			return true
 	return false
+
+func find_entities_at_position(test_position: Vector2i) -> Array[Entity]:
+	var array: Array[Entity] = []
+	for node in get_tree().get_nodes_in_group("entity"):
+		if node is Entity:
+			var entity: Entity = node
+			if entity.grid_position == test_position:
+				array.append(entity)
+	return array
 
 func start_conflict(conflict: Conflict) -> void:
 	current_conflict = conflict_scene.instantiate()
@@ -55,6 +72,17 @@ func start_conflict(conflict: Conflict) -> void:
 func end_conflict() -> void:
 	current_conflict.queue_free()
 	current_conflict = null
+
+func display_name_select() -> void:
+	var name_select_scene: NameSelectUi = name_select_ui.instantiate()
+	open_name_select = true
+	add_child(name_select_scene)
+	await name_select_scene.menu_closed
+	open_name_select = false
+	name_select_scene.queue_free()
+
+func is_movement_blocked() -> bool:
+	return open_dialogue || open_name_select
 
 #region signals
 

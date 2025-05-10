@@ -1,11 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://3lxfp01agu70"]
+[gd_scene load_steps=5 format=3 uid="uid://3lxfp01agu70"]
 
 [ext_resource type="Script" uid="uid://5jakq8e4rxxy" path="res://world/world.gd" id="1_6xmxd"]
 [ext_resource type="PackedScene" uid="uid://p0f5gent32ft" path="res://ui/conflict/conflict_scene.tscn" id="2_4717r"]
-[ext_resource type="PackedScene" uid="uid://b5qho3wr3ubsn" path="res://world/locations/casa_prota.tscn" id="2_tcf2h"]
+[ext_resource type="PackedScene" uid="uid://ony32tctdwju" path="res://world/locations/intro.tscn" id="3_4717r"]
+[ext_resource type="PackedScene" uid="uid://eirvx4yv4f80" path="res://ui/dialogue/sinatura.tscn" id="4_h5o24"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_6xmxd")
 conflict_scene = ExtResource("2_4717r")
-starting_location = ExtResource("2_tcf2h")
-starting_position = Vector2i(4, 3)
+starting_location = ExtResource("3_4717r")
+name_select_ui = ExtResource("4_h5o24")

@@ -1,0 +1,22 @@
+~ start
+* ring ring *
+Clic!
+Breixo: Ei boas, que tal? Mira, son Breixo.
+- Breixo? Que Breixo?
+	Pois quen vai ser, o responsábel local do partido. Aínda non espertaches ou?
+Chámote por un asunto importante, e preciso a túa axuda.
+Esta semana entréganse as sinaturas contra xa sabes que.
+- Que?
+Si, a pasteira que nos queren instalar aquí ao lado da aldea. Xa sabes, non?
+O caso é, deixeiche na entrada da casa as follas de recollida de sinaturas.
+Preciso que collas mínimo 9 sinaturas e que as traias de volta para poder envialas.
+Quedou claro, non si? Pois ala, que teño présa. Obrigado!
+Clic!
+do DialogueFunctions.change_location("casa_prota_dormitorio")
+=> END
+
+~ notas
+Aquí están as notas de recollida de sinaturas. Será mellor poñerse mans á obra.
+A primeira sinatura pode ser a túa. Disposte a cubrir a primeira liña cos teus datos.
+do DialogueFunctions.display_name_select()
+=> END

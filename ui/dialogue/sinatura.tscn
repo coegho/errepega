@@ -1,0 +1,257 @@
+[gd_scene load_steps=10 format=3 uid="uid://eirvx4yv4f80"]
+
+[ext_resource type="Theme" uid="uid://p2u50kaoqvqa" path="res://ui/theme.tres" id="1_fxkr6"]
+[ext_resource type="Resource" uid="uid://wi02qolajktb" path="res://resources/dialogue/name_selected.dialogue" id="2_bkxxr"]
+[ext_resource type="Script" uid="uid://du0uab84qqbkf" path="res://ui/dialogue/sinatura.gd" id="2_c0b8n"]
+[ext_resource type="Texture2D" uid="uid://d34epkemkjrca" path="res://resources/aseprite/character.png" id="2_crww0"]
+
+[sub_resource type="Animation" id="Animation_c0b8n"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_crww0"]
+resource_name = "walking_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkxxr"]
+_data = {
+&"RESET": SubResource("Animation_c0b8n"),
+&"walk_down": SubResource("Animation_crww0")
+}
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_crww0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fxkr6"]
+content_margin_left = 5.0
+content_margin_top = 3.0
+content_margin_right = 5.0
+content_margin_bottom = 3.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Sinatura" type="CanvasLayer"]
+script = ExtResource("2_c0b8n")
+success_dialogue = ExtResource("2_bkxxr")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fxkr6")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpriteNome" type="Sprite2D" parent="Control"]
+unique_name_in_owner = true
+position = Vector2(8, 8)
+texture = ExtResource("2_crww0")
+centered = false
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/SpriteNome"]
+libraries = {
+&"": SubResource("AnimationLibrary_bkxxr")
+}
+autoplay = "RESET"
+
+[node name="SpriteConcello" type="Sprite2D" parent="Control"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(88, 8)
+texture = ExtResource("2_crww0")
+centered = false
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/SpriteConcello"]
+libraries = {
+&"": SubResource("AnimationLibrary_bkxxr")
+}
+autoplay = "RESET"
+
+[node name="SpriteXenero" type="Sprite2D" parent="Control"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(88, 56)
+texture = ExtResource("2_crww0")
+centered = false
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/SpriteXenero"]
+libraries = {
+&"": SubResource("AnimationLibrary_bkxxr")
+}
+autoplay = "RESET"
+
+[node name="SpriteRematar" type="Sprite2D" parent="Control"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(24, 104)
+texture = ExtResource("2_crww0")
+centered = false
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/SpriteRematar"]
+libraries = {
+&"": SubResource("AnimationLibrary_bkxxr")
+}
+autoplay = "RESET"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NomeLabel" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Nome:"
+horizontal_alignment = 2
+
+[node name="NomeInput" type="LineEdit" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+max_length = 8
+caret_blink = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="ConcelloLabel" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Concello:"
+horizontal_alignment = 2
+
+[node name="ConcelloInput" type="LineEdit" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+max_length = 10
+caret_blink = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="XeneroLabel" type="Label" parent="Control/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Xénero:"
+horizontal_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="XeneroHomeInput" type="CheckBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = SubResource("ButtonGroup_crww0")
+text = "Home"
+
+[node name="XeneroMullerInput" type="CheckBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = SubResource("ButtonGroup_crww0")
+text = "Muller"
+
+[node name="XeneroNbInput" type="CheckBox" parent="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = SubResource("ButtonGroup_crww0")
+text = "N/B"
+
+[node name="RematarButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_fxkr6")
+disabled = true
+text = "Rematar"
+
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/NomeInput" to="." method="_on_nome_input_focus_entered"]
+[connection signal="text_changed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer/NomeInput" to="." method="_on_nome_input_text_changed"]
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/ConcelloInput" to="." method="_on_concello_input_focus_entered"]
+[connection signal="text_changed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer2/ConcelloInput" to="." method="_on_concello_input_text_changed"]
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/XeneroHomeInput" to="." method="_on_xenero_input_focus_entered"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/XeneroHomeInput" to="." method="_on_xenero_input_pressed"]
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/XeneroMullerInput" to="." method="_on_xenero_input_focus_entered"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/XeneroMullerInput" to="." method="_on_xenero_input_pressed"]
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/XeneroNbInput" to="." method="_on_xenero_input_focus_entered"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/XeneroNbInput" to="." method="_on_xenero_input_pressed"]
+[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/RematarButton" to="." method="_on_rematar_button_focus_entered"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/RematarButton" to="." method="_on_rematar_button_pressed"]

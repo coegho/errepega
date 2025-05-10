@@ -1,0 +1,120 @@
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://p2u50kaoqvqa"]
+
+[ext_resource type="Texture2D" uid="uid://vy33unh62dcw" path="res://resources/aseprite/sinatura_input.png" id="1_6lx7k"]
+[ext_resource type="Texture2D" uid="uid://3delf3p2xcml" path="res://resources/aseprite/dialogue_panel.png" id="1_jf26r"]
+[ext_resource type="FontFile" uid="uid://cx6rhtqc4s76h" path="res://resources/fonts/m5x7.ttf" id="2_6lx7k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_235ry"]
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 3.0
+bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.345098, 0.345098, 0.345098, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufjut"]
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 3.0
+bg_color = Color(0.227451, 0.227451, 0.227451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcbqo"]
+content_margin_left = 6.0
+content_margin_top = 3.0
+content_margin_right = 6.0
+content_margin_bottom = 3.0
+bg_color = Color(0.0666667, 0.0666667, 0.0666667, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6i7a"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lx7k"]
+atlas = ExtResource("1_6lx7k")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqtc0"]
+atlas = ExtResource("1_6lx7k")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jf26r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6lx7k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3fgq6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iqtc0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7any1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lx7k"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf26r"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_24pi7"]
+texture = ExtResource("1_jf26r")
+
+[resource]
+default_font = ExtResource("2_6lx7k")
+default_font_size = 16
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_235ry")
+Button/styles/focus = SubResource("StyleBoxFlat_ufjut")
+Button/styles/hover = SubResource("StyleBoxFlat_fcbqo")
+Button/styles/normal = SubResource("StyleBoxFlat_t6i7a")
+CheckBox/colors/font_color = Color(0, 0, 0, 1)
+CheckBox/colors/font_focus_color = Color(0, 0, 0, 1)
+CheckBox/colors/font_hover_color = Color(0, 0, 0, 1)
+CheckBox/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+CheckBox/colors/font_pressed_color = Color(0, 0, 0, 1)
+CheckBox/icons/radio_checked = SubResource("AtlasTexture_6lx7k")
+CheckBox/icons/radio_unchecked = SubResource("AtlasTexture_iqtc0")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_jf26r")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_6lx7k")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_3fgq6")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_iqtc0")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_7any1")
+Label/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_6lx7k")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_jf26r")
+MarginContainer/constants/margin_bottom = 7
+MarginContainer/constants/margin_left = 8
+MarginContainer/constants/margin_right = 8
+MarginContainer/constants/margin_top = 0
+Panel/styles/panel = SubResource("StyleBoxTexture_24pi7")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
