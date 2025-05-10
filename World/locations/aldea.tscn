@@ -178,7 +178,7 @@ dialogue = ExtResource("4_34wi1")
 position = Vector2(40, -8)
 script = ExtResource("5_wvodu")
 new_location_name = "casa_prota"
-starting_position = Vector2i(4, 3)
+starting_position = Vector2i(4, 8)
 metadata/_custom_type_script = "uid://bjdkfmk2fdell"
 
 [node name="letreiro_casa_prota" type="Node2D" parent="." groups=["entity"]]

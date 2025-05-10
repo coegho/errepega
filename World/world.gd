@@ -5,6 +5,8 @@ class_name World extends Node2D
 @export var starting_position: Vector2i = Vector2i.ZERO
 
 var current_location: Node
+var starting_orientation: Vector2i = Vector2i.DOWN
+var starting_velocity: Vector2i = Vector2i.ZERO
 
 var tilemaps: Array[TileMapLayer] = []
 var open_dialogue: bool = false
@@ -16,10 +18,17 @@ func _init() -> void:
 	EventBus.dialogue_ended.connect(_on_dialogue_ended)
 
 func _ready() -> void:
-	change_location(starting_location, starting_position)
+	change_location(starting_location, starting_position, starting_orientation, starting_velocity)
 
-func change_location(new_location: PackedScene, teleport_to_position: Vector2i) -> void:
+func change_location(
+	new_location: PackedScene,
+	teleport_to_position: Vector2i,
+	new_orientation: Vector2i,
+	new_velocity: Vector2i
+	) -> void:
 	starting_position = teleport_to_position
+	starting_orientation = new_orientation
+	starting_velocity = new_velocity
 	if current_location:
 		current_location.queue_free()
 	current_location = new_location.instantiate()

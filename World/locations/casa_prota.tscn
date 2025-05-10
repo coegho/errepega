@@ -154,5 +154,6 @@ position = Vector2(72, 56)
 position = Vector2(72, 152)
 script = ExtResource("3_edo44")
 new_location_name = "aldea"
-starting_position = Vector2i(2, 0)
+starting_position = Vector2i(2, -1)
+starting_velocity = Vector2i(0, 1)
 metadata/_custom_type_script = "uid://bjdkfmk2fdell"

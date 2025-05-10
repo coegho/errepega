@@ -5,8 +5,11 @@ class_name Player extends MobileEntity
 var full_stop: bool = true
 
 func _ready() -> void:
-	grid_position = world.starting_position
-	global_position = GridMovement.grid_to_pixel(grid_position)
+	global_position = GridMovement.grid_to_pixel(world.starting_position)
+	grid_position = world.starting_position + world.starting_velocity
+	orientation = world.starting_orientation
+	velocity = world.starting_velocity
+	stand_animation()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("action"):
@@ -62,4 +65,4 @@ func _on_step_done(final_position: Vector2i) -> void:
 	var entities := find_entities_at_position(final_position)
 	for entity in entities:
 		if entity is DoorEntity:
-			world.change_location(entity.new_location, entity.starting_position)
+			world.change_location(entity.new_location, entity.starting_position, orientation, entity.starting_velocity)
