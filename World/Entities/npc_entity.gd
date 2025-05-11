@@ -2,6 +2,7 @@ class_name NpcEntity extends MobileEntity
 
 @onready var interactuable: InteractuableEntity = $InteractuableEntity
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var exclamation_anim: AnimationPlayer = $ExclamationAnimationPlayer
 
 @export var turn_when_interacted: bool = true
 @export var vision_range: int = 0
@@ -29,6 +30,8 @@ func player_on_range(player_position: Vector2i) -> bool:
 
 func trigger_player_chase(player: Player) -> void:
 	disable_range_vision()
+	exclamation_anim.play("exclamation")
+	await exclamation_anim.animation_finished
 	while (player.grid_position - grid_position).length() > 1:
 		direction = orientation
 		await step_done
