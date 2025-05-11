@@ -108,6 +108,7 @@ offset_bottom = 25.0
 text = "[NORMAL]"
 
 [node name="SpoonBox" type="HBoxContainer" parent="Root"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -122,21 +123,35 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="SpoonPoint1" type="TextureRect" parent="Root/SpoonBox"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = SubResource("AtlasTexture_cxid7")
 
 [node name="SpoonPoint2" type="TextureRect" parent="Root/SpoonBox"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = SubResource("AtlasTexture_rhbie")
 
 [node name="SpoonPoint3" type="TextureRect" parent="Root/SpoonBox"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = SubResource("AtlasTexture_rhbie")
 
 [node name="SpoonPoint4" type="TextureRect" parent="Root/SpoonBox"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = SubResource("AtlasTexture_rhbie")
 
 [node name="SpoonPoint5" type="TextureRect" parent="Root/SpoonBox"]
+unique_name_in_owner = true
 layout_mode = 2
 texture = SubResource("AtlasTexture_8kn05")
+
+[node name="FlashRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

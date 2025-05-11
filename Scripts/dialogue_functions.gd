@@ -29,3 +29,19 @@ func display_name_select() -> void:
 
 func get_var(var_name: String) -> bool:
 	return PlayerState.vars.get(var_name) or false
+
+func set_var(var_name: String, value: bool) -> void:
+	PlayerState.vars.set(var_name, value)
+
+func suffer_harm() -> void:
+	PlayerState.suffer_harm()
+	EventBus.flash()
+
+func add_signature(signer_name: String) -> void:
+	PlayerState.signatures.append(signer_name)
+
+func g(home_string: String, muller_string: String, nb_string: String) -> String:
+	match pronoun:
+		0: return home_string
+		1: return muller_string
+		_: return nb_string

@@ -1,5 +1,186 @@
 ~ start
 {{conflict.enemy_name}} ten ganas de leria!
 Que queres facer?
-  - Loitar => start
-  - Fuxir => END
+- Bo día, Antonia!
+	Antonia: Bo día! Como estás?
+- Síntoo, teño que marchar!
+	Antonia: Nada, non te preocupes, se vai ser só un segundo!
+Mira, xa tiña ganas eu de pillarte por aquí un día e preguntarche directamente.
+Como é que case non te vexo pola rúa? Tes moito traballo?
+Ti xa remataras os estudos, non si? Estás traballando xa?
+Ou que fas?
+- Traballo bastante
+	=>< traballo
+- Estou a gusto na casa
+	=>< sedentarismo
+- Non é asunto teu
+	=>< insulto
+
+Antonia: E mira, cambiando de tema...
+if DialogueFunctions.pronoun == 0
+	=>< home
+elif DialogueFunctions.pronoun == 1
+	=>< muller
+else
+	=>< nonbinarie
+Antonia: Ai, mira que hora é! Vou ter que ir marchando xa.
+Hai algo que me queiras preguntar ti?
+- Pedir sinatura
+Antonia: Que tes aí? Ah, sinaturas para parar unha fábrica?
+E logo que pasa coa fábrica? Non nos virían mal os postos de traballo.
+=>< argumento
+Mira, voucho asinar. Que non se diga que non me preocupo polas causas xustas.
+{{player_name}}: Moitas grazas!
+Recibiches a sinatura de {{conflict.enemy_name}}!
+=> END
+
+
+~ traballo
+Antonia: Ah xa tes traballo entón! Alégrome por ti!
+Non hai moito traballo nestes tempos, non si?
+Escoita, e que tal no traballo? Estás a gusto? Gústache traballar?
+-
+- Vivo para iso
+	Antonia: Así se fala! A cultura do esforzo é importante!
+	O meu home sempre di que a xente nova non ten ganas de traballar.
+	Alégrame ver que se equivoca! Que bo exemplo para a xente da aldea.
+	Lémbrasme ao Eladio, o veciño. Ese si que traballa arreo, eh!
+	do DialogueFunctions.suffer_harm()
+	(Sintes un arrepío. Que clase de psicópata afirma que vive para o traballo?)
+- Máis ou menos
+	Antonia: Ah, xa sei que traballar ás veces é duro, pero hai que facelo.
+	Así axudas cos cartos a túa nai. Non creo que lle veña ben ter fillos no paro, non si?
+	Eu non creo nesas cousas que din por aí sobre ti, eh?
+	Para traballar ben vales.
+	- Que din sobre min?
+		Antonia: Xa sabes, algúns din que non vales para traballar...
+		Que os que son coma ti só serven para rañar o bandullo e vivir do conto.
+		"Pobre da nai de {{player_name}}, co que esforzou en criar os fillos!"
+		Que eu non o penso, eh? Só che repito o que din algúns laretas.
+		do DialogueFunctions.suffer_harm()
+		(Sinceramente, poderías vivir tan {{g("tranquilo", "tranquila", "tranquile")}} sen ter escoitado ese comentario)
+	- (Ignorar o comentario)
+- Detéstoo
+	Antonia: Ah, non digas iso! Pensa que peor sería non telo!
+	Supoño que a xente nova non está tan afeita ao traballo como antes...
+- Mentín. Non traballo
+	Antonia: Ah... entendo.
+	do DialogueFunctions.suffer_harm()
+	(Notas a súa mirada xulgándote con certa compaixón. Resposta incorrecta, supoño)
+=> END
+
+~ sedentarismo
+Antonia: Home claro, e quen non!
+Pero como sigas así vaste converter nun becho raro, eh?
+E eu non creo que a túa nai criase un becho raro... Digan o que digan algúns.
+O meu home di que a rapazada anda parva de estar enganchada ás maquiniñas.
+E a verdade é que tes a pel moi pálida... Faime caso, faiche falla algo de sol!
+do DialogueFunctions.suffer_harm()
+(Estate escrutando coa mirada, como quen analiza un insecto cunha lupa)
+=> END
+
+~ insulto
+Antonia: Tampouco é preciso responder así...
+Mira, eu coñézote dende que levabas cueiros, entón sei que es unha persoa decente.
+Pero se respondes así a outras persoas pode parecerlles mala educación, sabes?
+E penso que na túa casa esforzáronse moito en educarvos para quedar con esa fama...
+E ti preocúpaste pola túa familia, non si?
+do DialogueFunctions.suffer_harm()
+(Comezas a sentir unha sensación desagradábel polo rumbo que está tomando esta conversa)
+=> END
+
+~ home
+Cando vas botar moza? A un bo mozo coma ti non lle faltarán pretendentes!
+Dime!
+- Estamos niso
+	Antonia: Ai si, non? Moi ben! Iso é o que toca!
+	Se che custa coñecer mulleres non te preocupes, que eu miro de presentarche algunha.
+	Unha amiga miña ten unha filla da túa idade, podo preguntarlle a ver...
+	Seguro que lle interesa!
+	- Non! Non fai falla
+		Antonia: Nada, home, se non me custa nada facerche o favor!
+		Xa verás o contenta que se pon a túa nai cando lle digas que tes unha cita!
+		do DialogueFunctions.suffer_harm()
+		(Non sabes se esta conversa pode resultar máis violenta, mais mellor non facer apostas)
+	- Si, por favor
+		Antonia: Si que tes ganas, eh!
+		Se chego a saber que estabas tan desesperado por atopar moza, teríacho proposto antes.
+		Iso si, intenta disimulalo con ela, que iso adoita espantar ás mulleres, eh?
+		do DialogueFunctions.suffer_harm()
+		(Lembra que isto non é un Datesim. Que pretendes conseguir con esta exhibición?)
+- Xa teño
+	do DialogueFunctions.set_var("parella", true)
+	Antonia: E logo tes moza e non me dis nada!
+	Cando ma vas presentar? Imaxino que a túa nai xa a coñece, non si?
+	Agora teño algo de présa, pero despois pásome pola vosa casa e pregúntovos todo.
+	if not DialogueFunctions.get_var("nai_passed")
+		(Non sabes por que, pero intúes que isto poderá ter consecuencias no futuro...)
+- Non me interesa
+	Antonia: Ah... Vale...
+	Non sabía que eras desa clase de homes. Aínda que claro...
+	Que non xulgo, eh! Eu son moi moderna para esas cousas. E tampouco es o primeiro que coñezo!
+	Por exemplo, o fillo dunha amiga miña que traballa nunha perrucaría.
+	Moi bo rapaz! Igual o coñeces. Un que ten un pendente.
+	do DialogueFunctions.suffer_harm()
+	(Miras ao teu arredor, na procura dun rescate de emerxencia)
+=> END
+
+~ muller
+Cando botas mozo? Unha moza guapa coma ti ha de ter uns cantos pretendentes detrás!
+-
+- Estamos niso
+	Antonia: Mira que como non apures váiseche pasar o arroz!
+	Escoita, e por que non lle pides saír ao Eladio? É un mozo importante e cun bo traballo.
+	Se che dá vergoña podo preguntarlle eu por ti, eh? Non me custa nada!
+	if DialogueFunctions.get_var("eladio_passed")
+		do DialogueFunctions.suffer_harm()
+		(Sintes unha arcada. Xa coñeciches a Eladio, non si?)
+	else
+		do DialogueFunctions.set_var("antonia_eladio", true)
+		(Isto pode acabar moi mal... Mellor intentar cambiar de tema antes de que sexa tarde)
+- Xa teño
+	do DialogueFunctions.set_var("parella", true)
+	Antonia: E logo tes mozo e non me dis nada!
+	Cando ma vas presentar? Imaxino que a túa nai xa o coñece, non si?
+	Agora teño algo de présa, pero despois pásome pola vosa casa e pregúntovos todo.
+	if DialogueFunctions.get_var("nai_passed")
+		(Non sabes por que, pero intúes que isto poderá ter consecuencias no futuro...)
+- Non me interesa
+	Antonia: Ah... Vale...
+	Non sabía que eras desa clase de mulleres. Aínda que claro...
+	Que non xulgo, eh! Eu son moi moderna para esas cousas. Cada un o seu, non?
+	O que si, teño bastante curiosidade por como funciona... Se non hai un home...?
+	Despois búscoche e explícasme como vai a cousa, porque non consigo velo!
+	do DialogueFunctions.suffer_harm()
+	(Miras ao teu arredor, na procura dun rescate de emerxencia)
+=> END
+
+~ nonbinarie
+Como vai iso do xénero neutro? É dicir... Non o entendo.
+Suponse que é o de rematar as palabras con -e e todo iso, non si?
+Eu xa sabes que con estas cousas modernas pérdome, antes todo era máis sinxelo.
+Que non xulgo, eh! Non me gusta meterme na vida dos demais.
+De que vai iso?
+- (Explicar)
+	do DialogueFunctions.suffer_harm()
+	(Das a mesma longa explicación que xa diches mil veces. O agotamento apodérase de ti)
+	Antonia: Aah, así que é así, eh. Agora enténdoo todo.
+	Narrador: (Non o entende en absoluto)
+- Noutra ocasión
+=> END
+
+~ argumento
+Entón?
+- (Usar a ecoloxía)
+	{{player_name}}: Vai arrasar os nosos montes e contaminar o río.
+	O impacto ecolóxico é tremendo. Non nos compensan os postos de traballo.
+	Antonia: Pois pode ser, pero de algo hai que comer, non?
+	Eu entendo que á xente nova sexa ecoloxista e todo iso, pero...
+	A onde imos sen algo de industria?
+	=> argumento
+- (Usar a economía)
+	{{player_name}}: Vai destruír a economía local.
+	Xerará materias primas para exportar, que rematarán o ciclo produtivo no estranxeiro.
+	Pero a nós vainos deixar sen monte e sen río. É extractivismo colonial de libro.
+	Antonia: Visto así... Igual tes razón.
+=> END

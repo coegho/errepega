@@ -1,11 +1,19 @@
 import "res://resources/dialogue/conflict_antonia.dialogue" as conflict
 
 ~ start
+if DialogueFunctions.get_var("antonia_passed")
+	=> passed
 Antonia: Ai {{player_name}}, alégrome de verte!
 Canto hai que non nos vemos? Que boa oportunidade de poñernos ao día!
 do DialogueFunctions.start_conflict("antonia")
 =>< conflict/start
 do DialogueFunctions.end_conflict()
+do DialogueFunctions.add_signature("Antonia")
+do DialogueFunctions.set_var("antonia_passed", true)
 Antonia: Xesús, é tardísimo, poñémonos a falar e pasa o tempo voando.
 Dalle saúdos a túa nai da miña parte!
+=> END
+
+~ passed
+Antonia: Ei {{player_name}}, saúdame sempre!
 => END

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyr5c5hw4h584" path="res://world/entities/npc_entity.gd" id="1_j6ovb"]
 [ext_resource type="Script" uid="uid://b7s7drqhfdrjv" path="res://world/entities/interactuable_entity.gd" id="2_rs7u5"]
-[ext_resource type="Texture2D" uid="uid://d34epkemkjrca" path="res://resources/aseprite/character.png" id="3_6ig2w"]
+[ext_resource type="Texture2D" uid="uid://bwcdqma26766b" path="res://resources/aseprite/cotilla_world.png" id="3_rs7u5"]
 [ext_resource type="AnimationLibrary" uid="uid://lptyp00q34p" path="res://resources/moving_animations.res" id="4_tocso"]
 [ext_resource type="Texture2D" uid="uid://cq314xmw3q0tp" path="res://resources/aseprite/exclamation.png" id="5_rs7u5"]
 
@@ -81,7 +81,7 @@ script = ExtResource("2_rs7u5")
 metadata/_custom_type_script = "uid://b7s7drqhfdrjv"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_6ig2w")
+texture = ExtResource("3_rs7u5")
 hframes = 3
 vframes = 3
 

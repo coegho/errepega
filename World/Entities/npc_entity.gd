@@ -8,8 +8,9 @@ class_name NpcEntity extends MobileEntity
 @export var vision_range: int = 0
 
 @export var dialogue: DialogueResource
-@export var dialogue_title: String = ""
+@export var dialogue_title: String = "start"
 @export var sprite_texture: Texture2D
+@export var passed_var: String
 
 func _ready() -> void:
 	update_grid_position()
@@ -19,6 +20,7 @@ func _ready() -> void:
 
 func _on_interaction_started(player: Player) -> void:
 	if turn_when_interacted:
+		disable_range_vision()
 		orientation = (player.grid_position - grid_position)
 
 func player_on_range(player_position: Vector2i) -> bool:

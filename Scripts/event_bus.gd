@@ -10,9 +10,13 @@ signal dialogue_started
 signal dialogue_ended
 signal conflict_started(conflict_name: StringName)
 signal conflict_ended
+signal flash_signal
 
 func set_world(new_world: World):
 	_world = new_world
 
 func get_world() -> World:
 	return _world
+
+func flash() -> void:
+	flash_signal.emit()
