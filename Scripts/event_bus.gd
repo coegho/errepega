@@ -11,8 +11,8 @@ signal dialogue_ended
 signal conflict_started(conflict_name: StringName)
 signal conflict_ended
 
-func set_world(world: World):
-	_world = world
+func set_world(new_world: World):
+	_world = new_world
 
 func get_world() -> World:
 	return _world

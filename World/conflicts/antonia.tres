@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Conflict" load_steps=3 format=3 uid="uid://ctihgedaruje"]
+
+[ext_resource type="Texture2D" uid="uid://rs8028pc06i7" path="res://resources/aseprite/cotilla.png" id="1_vihtn"]
+[ext_resource type="Script" uid="uid://comk6kntckb8t" path="res://scripts/conflict.gd" id="2_yk26u"]
+
+[resource]
+script = ExtResource("2_yk26u")
+enemy_sprite = ExtResource("1_vihtn")
+enemy_name = &"Veciña Antonia"
+metadata/_custom_type_script = "uid://comk6kntckb8t"

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cottiju5gri6f"
+path="res://.godot/imported/antonia.dialogue-a907aa52fd48201e30e25032b56c68f6.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/antonia.dialogue"
+dest_files=["res://.godot/imported/antonia.dialogue-a907aa52fd48201e30e25032b56c68f6.tres"]
+
+[params]
+
+defaults=true

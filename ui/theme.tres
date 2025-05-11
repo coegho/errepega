@@ -53,7 +53,11 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("1_6lx7k")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jf26r"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqtc0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_right = 1
+border_width_bottom = 1
+anti_aliasing = false
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6lx7k"]
 
@@ -103,12 +107,13 @@ CheckBox/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 CheckBox/colors/font_pressed_color = Color(0, 0, 0, 1)
 CheckBox/icons/radio_checked = SubResource("AtlasTexture_6lx7k")
 CheckBox/icons/radio_unchecked = SubResource("AtlasTexture_iqtc0")
-CheckBox/styles/focus = SubResource("StyleBoxEmpty_jf26r")
+CheckBox/styles/focus = SubResource("StyleBoxFlat_iqtc0")
 CheckBox/styles/hover = SubResource("StyleBoxEmpty_6lx7k")
 CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_3fgq6")
 CheckBox/styles/normal = SubResource("StyleBoxEmpty_iqtc0")
 CheckBox/styles/pressed = SubResource("StyleBoxEmpty_7any1")
 Label/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
 LineEdit/colors/font_color = Color(0, 0, 0, 1)
 LineEdit/styles/focus = SubResource("StyleBoxFlat_6lx7k")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_jf26r")

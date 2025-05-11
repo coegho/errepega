@@ -1,0 +1,12 @@
+import "res://resources/dialogue/conflict_antonia.dialogue" as conflict
+
+~ start
+Antonia: Ai {{player_name}}, alégrome de verte!
+Canto hai que non nos vemos? Que boa oportunidade de poñernos ao día!
+do DialogueFunctions.start_conflict("antonia")
+=>< conflict/start
+do DialogueFunctions.end_conflict()
+Antonia: Xesús, é tardísimo, poñémonos a falar e pasa o tempo voando.
+Xa non te entreteño máis, que supoño que terás máis cousas que facer.
+Dalle saúdos a túa nai da miña parte!
+=> END

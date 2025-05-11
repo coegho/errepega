@@ -1,4 +1,7 @@
 ~ start
+=> teleport
+#TODO: borrar isto antes de subir
+
 * ring ring *
 Clic!
 Breixo: Ei boas, que tal? Mira, son Breixo.
@@ -12,6 +15,9 @@ O caso é, deixeiche na entrada da casa as follas de recollida de sinaturas.
 Preciso que collas mínimo 9 sinaturas e que as traias de volta para poder envialas.
 Quedou claro, non si? Pois ala, que teño présa. Obrigado!
 Clic!
+=> teleport
+
+~ teleport
 do DialogueFunctions.change_location("casa_prota_dormitorio")
 => END
 

@@ -1,7 +1,9 @@
 extends Node
 
-var player_name: String = "CAMARADA"
-
+var player_name: String:
+	get: return PlayerState.player_name
+var pronoun: int:
+	get: return PlayerState.player_pronoun
 var conflict: Conflict
 
 func start_conflict(conflict_name: String) -> void:

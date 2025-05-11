@@ -1,0 +1,5 @@
+~ start
+{{conflict.enemy_name}} ten ganas de leria!
+Que queres facer?
+  - Loitar => start
+  - Fuxir => END

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://brjuyuiov4lss"]
+[gd_scene load_steps=12 format=4 uid="uid://brjuyuiov4lss"]
 
 [ext_resource type="Texture2D" uid="uid://dpbxhv1nyxlmq" path="res://resources/aseprite/tileset.png" id="1_66nmr"]
 [ext_resource type="PackedScene" uid="uid://bdnka55ed7m1f" path="res://world/player/player.tscn" id="2_wdsy2"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://bjdkfmk2fdell" path="res://world/entities/door_entity.gd" id="5_wvodu"]
 [ext_resource type="Resource" uid="uid://dcf1iri587jsc" path="res://resources/dialogue/letreiros.dialogue" id="5_yxtj6"]
 [ext_resource type="Resource" uid="uid://byuf1ckh1loyl" path="res://resources/dialogue/segredos.dialogue" id="6_4wh13"]
+[ext_resource type="PackedScene" uid="uid://buhycx6qsjo7p" path="res://world/entities/npc.tscn" id="8_wvodu"]
+[ext_resource type="Resource" uid="uid://cottiju5gri6f" path="res://resources/dialogue/antonia.dialogue" id="9_34wi1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aolye"]
 texture = ExtResource("1_66nmr")
@@ -167,6 +169,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAADAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 tile_set = SubResource("TileSet_1jo2i")
 
 [node name="Player" parent="." instance=ExtResource("2_wdsy2")]
+position = Vector2(8, 8)
 
 [node name="Sign" type="Node2D" parent="." groups=["entity"]]
 position = Vector2(88, 40)
@@ -221,3 +224,9 @@ position = Vector2(56, -56)
 script = ExtResource("3_wvodu")
 dialogue = ExtResource("6_4wh13")
 dialogue_title = "item"
+
+[node name="Antonia" parent="." instance=ExtResource("8_wvodu")]
+position = Vector2(136, 56)
+vision_range = 5
+dialogue = ExtResource("9_34wi1")
+orientation = Vector2i(0, -1)

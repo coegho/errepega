@@ -3,11 +3,11 @@ class_name MobileEntity extends Entity
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var speed: float = 53.333
 
-var direction: Vector2i = Vector2i.ZERO
-var velocity: Vector2i = Vector2i.ZERO
-var orientation: Vector2i = Vector2i.DOWN
+@export var direction: Vector2i = Vector2i.ZERO
+@export var velocity: Vector2i = Vector2i.ZERO
+@export var orientation: Vector2i = Vector2i.DOWN
 
-signal step_done(final_position: Vector2i)
+signal step_done
 
 
 func _physics_process(delta: float) -> void:
@@ -22,18 +22,16 @@ func walk_logic(delta: float) -> void:
 	walk_animation()
 	var target_position := GridMovement.grid_to_pixel(grid_position)
 	global_position = global_position.move_toward(target_position, delta*speed)
-	if global_position == target_position:
+	if global_position.is_equal_approx(target_position):
 		orientation = velocity
 		velocity = Vector2i.ZERO
-		step_done.emit(grid_position)
+		step_done.emit()
 
 func idle_logic() -> void:
 	if direction != Vector2i.ZERO:
-		if orientation == direction:
-			velocity = direction
-			grid_position = grid_position + velocity
-		else:
-			turn_around()
+		velocity = direction
+		grid_position = grid_position + velocity
+		direction = Vector2i.ZERO
 	else:
 		stand_animation()
 

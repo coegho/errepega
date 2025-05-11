@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bh7q0mv7t2gfx"
+path="res://.godot/imported/conflict_antonia.dialogue-3e8f9fa5c0f75f7efedc1a06b151e425.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/conflict_antonia.dialogue"
+dest_files=["res://.godot/imported/conflict_antonia.dialogue-3e8f9fa5c0f75f7efedc1a06b151e425.tres"]
+
+[params]
+
+defaults=true

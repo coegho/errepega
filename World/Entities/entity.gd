@@ -10,4 +10,7 @@ func _init() -> void:
 	add_to_group("entity")
 
 func _ready() -> void:
+	update_grid_position()
+
+func update_grid_position() -> void:
 	grid_position = GridMovement.pixel_to_grid(global_position)

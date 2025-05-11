@@ -1,12 +1,15 @@
 class_name StateConditional extends Node2D
 
 @export var condition_name: StringName
-@export var negative: bool
+
+signal condition_passed
+signal condition_failed
 
 func _ready() -> void:
-	if (check_condition() && negative) || \
-		(not check_condition() && not negative):
-		queue_free()
+	if check_condition():
+		condition_passed.emit()
+	else:
+		condition_failed.emit()
 
 func check_condition() -> bool:
 	return PlayerState.vars.has(condition_name) && \

@@ -79,7 +79,6 @@ metadata/_custom_type_script = "uid://b7s7drqhfdrjv"
 [node name="StateConditional" type="Node2D" parent="."]
 script = ExtResource("6_jvkwh")
 condition_name = &"name_selected"
-negative = true
 metadata/_custom_type_script = "uid://c4ritqcypmvol"
 
 [node name="FollaSinaturas" type="Node2D" parent="StateConditional"]
@@ -93,3 +92,5 @@ metadata/_custom_type_script = "uid://lj28u8u6hxn"
 
 [node name="Sprite2D" type="Sprite2D" parent="StateConditional/FollaSinaturas"]
 texture = ExtResource("6_vscfr")
+
+[connection signal="condition_passed" from="StateConditional" to="StateConditional" method="queue_free"]

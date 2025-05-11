@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://buhycx6qsjo7p"]
+
+[ext_resource type="Script" uid="uid://cyr5c5hw4h584" path="res://world/entities/npc_entity.gd" id="1_j6ovb"]
+[ext_resource type="Script" uid="uid://b7s7drqhfdrjv" path="res://world/entities/interactuable_entity.gd" id="2_rs7u5"]
+[ext_resource type="Texture2D" uid="uid://d34epkemkjrca" path="res://resources/aseprite/character.png" id="3_6ig2w"]
+[ext_resource type="AnimationLibrary" uid="uid://lptyp00q34p" path="res://resources/moving_animations.res" id="4_tocso"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j6ovb"]
+load_path = "res://.godot/imported/character.png-a77e737587605c0d25be25afa8209f22.ctex"
+
+[node name="Npc" type="Node2D"]
+script = ExtResource("1_j6ovb")
+sprite_texture = SubResource("CompressedTexture2D_j6ovb")
+solid = true
+metadata/_custom_type_script = "uid://c0oadxm0mttx7"
+
+[node name="InteractuableEntity" type="Node2D" parent="."]
+script = ExtResource("2_rs7u5")
+metadata/_custom_type_script = "uid://b7s7drqhfdrjv"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_6ig2w")
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": ExtResource("4_tocso")
+}
+
+[connection signal="step_done" from="." to="InteractuableEntity" method="update_grid_position"]
+[connection signal="interaction_started" from="InteractuableEntity" to="." method="_on_interaction_started"]
