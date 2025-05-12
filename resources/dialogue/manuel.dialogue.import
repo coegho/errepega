@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dnh3jk1m7djtg"
+path="res://.godot/imported/manuel.dialogue-292e9d5da718e5f6bc0beb7a438125bb.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/manuel.dialogue"
+dest_files=["res://.godot/imported/manuel.dialogue-292e9d5da718e5f6bc0beb7a438125bb.tres"]
+
+[params]
+
+defaults=true

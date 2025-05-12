@@ -6,7 +6,7 @@ Que queres facer?
 - Síntoo, teño que marchar!
 	Antonia: Nada, non te preocupes, se vai ser só un segundo!
 Mira, xa tiña ganas eu de pillarte por aquí un día e preguntarche directamente.
-Como é que case non te vexo pola rúa? Tes moito traballo?
+Como é que case non te vexo pola rúa? Tanta casa vaiche sentar mal!
 Ti xa remataras os estudos, non si? Estás traballando xa?
 Ou que fas?
 - Traballo bastante
@@ -24,10 +24,10 @@ elif DialogueFunctions.pronoun == 1
 else
 	=>< nonbinarie
 Antonia: Ai, mira que hora é! Vou ter que ir marchando xa.
-Hai algo que me queiras preguntar ti?
+O meu home levou unha trabada dun deses koalas e ten medo de que se lle infecte.
 - Pedir sinatura
-Antonia: Que tes aí? Ah, sinaturas para parar unha fábrica?
-E logo que pasa coa fábrica? Non nos virían mal os postos de traballo.
+Antonia: Que tes aí? Ah, estás recollendo sinaturas?
+Ah, para desfacerse dos koalas! É iso, non si?
 =>< argumento
 Mira, voucho asinar. Que non se diga que non me preocupo polas causas xustas.
 {{player_name}}: Moitas grazas!
@@ -38,8 +38,8 @@ Recibiches a sinatura de {{conflict.enemy_name}}!
 ~ traballo
 Antonia: Ah xa tes traballo entón! Alégrome por ti!
 Non hai moito traballo nestes tempos, non si?
-Escoita, e que tal no traballo? Estás a gusto? Gústache traballar?
--
+Escoita, e que tal no traballo? Estás a gusto?
+ Gústache traballar?
 - Vivo para iso
 	Antonia: Así se fala! A cultura do esforzo é importante!
 	O meu home sempre di que a xente nova non ten ganas de traballar.
@@ -70,13 +70,13 @@ Escoita, e que tal no traballo? Estás a gusto? Gústache traballar?
 => END
 
 ~ sedentarismo
-Antonia: Home claro, e quen non!
+Antonia: Xa vexo, xa! Has de pasalo ben para pasar tantas horas aí!
 Pero como sigas así vaste converter nun becho raro, eh?
 E eu non creo que a túa nai criase un becho raro... Digan o que digan algúns.
 O meu home di que a rapazada anda parva de estar enganchada ás maquiniñas.
 E a verdade é que tes a pel moi pálida... Faime caso, faiche falla algo de sol!
 do DialogueFunctions.suffer_harm()
-(Estate escrutando coa mirada, como quen analiza un insecto cunha lupa)
+(Sínteste {{g("observado", "observada", "observade")}}), como un insecto baixo unha lupa. Que desagradábel)
 => END
 
 ~ insulto
@@ -122,7 +122,7 @@ Dime!
 	Por exemplo, o fillo dunha amiga miña que traballa nunha perrucaría.
 	Moi bo rapaz! Igual o coñeces. Un que ten un pendente na orella.
 	do DialogueFunctions.suffer_harm()
-	(Miras ao teu arredor, na procura dun rescate de emerxencia)
+	(Miras ao teu arredor, na procura dunha vía de escape)
 => END
 
 ~ muller
@@ -147,7 +147,7 @@ Que xa temos unha idade!
 	O que si, teño bastante curiosidade por como funciona sen home polo medio...?
 	Despois búscoche e explícasme como vai a cousa, porque non o imaxino!
 	do DialogueFunctions.suffer_harm()
-	(Miras ao teu arredor, na procura dun rescate de emerxencia)
+	(Miras ao teu arredor, na procura dunha vía de escape)
 => END
 
 ~ nonbinarie
@@ -165,17 +165,16 @@ De que vai iso?
 => END
 
 ~ argumento
-Entón?
-- (Usar a ecoloxía)
-	{{player_name}}: Vai arrasar os nosos montes e contaminar o río.
-	O impacto ecolóxico é tremendo. Non nos compensan os postos de traballo.
-	Antonia: Pois pode ser, pero de algo hai que comer, non?
-	Eu entendo que á xente nova sexa ecoloxista e todo iso, pero...
-	A onde imos sen algo de industria?
+E por que?
+- Son invasores
+	{{player_name}}: Estes animais son unha especie invasora.
+	Non son endémicas do país, e ameazan o noso ecosistema local.
+	Antonia: Pode ser, pero son monísimos! Estou pensando en adoptar un.
+	Ademais, tendo os eucaliptos ao lado, é fácil conseguirlles comida.
 	=> argumento
-- (Usar a economía)
-	{{player_name}}: Vai destruír a economía local.
-	Xerará materias primas para exportar, que rematarán o ciclo produtivo no estranxeiro.
-	Pero a nós vainos deixar sen monte e sen río. É extractivismo colonial de libro.
+- Son perigosos
+	{{player_name}}: Os koalas son marsupiais salvaxes e imprevisíbeis.
+	Literalmente aliméntanse de follas velenosas! Non se me ocorre maior red flag.
 	Antonia: Visto así... Igual tes razón.
+	Teñen unha mirada bastante desconcertante... É imposíbel adiviñar en que pensan.
 => END
