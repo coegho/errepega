@@ -66,7 +66,7 @@ Escoita, e que tal no traballo? Estás a gusto? Gústache traballar?
 - Mentín. Non traballo
 	Antonia: Ah... entendo.
 	do DialogueFunctions.suffer_harm()
-	(Notas a súa mirada xulgándote con certa compaixón. Resposta incorrecta, supoño)
+	(A súa mirada cargada de pena perfórache a alma)
 => END
 
 ~ sedentarismo
@@ -86,7 +86,7 @@ Pero se respondes así a outras persoas pode parecerlles mala educación, sabes?
 E penso que na túa casa esforzáronse moito en educarvos para quedar con esa fama...
 E ti preocúpaste pola túa familia, non si?
 do DialogueFunctions.suffer_harm()
-(Comezas a sentir unha sensación desagradábel polo rumbo que está tomando esta conversa)
+(Ocórrenseche cousas mellores que facer antes que aturar un sermón)
 => END
 
 ~ home
@@ -120,24 +120,19 @@ Dime!
 	Non sabía que eras desa clase de homes. Aínda que claro...
 	Que non xulgo, eh! Eu son moi moderna para esas cousas. E tampouco es o primeiro que coñezo!
 	Por exemplo, o fillo dunha amiga miña que traballa nunha perrucaría.
-	Moi bo rapaz! Igual o coñeces. Un que ten un pendente.
+	Moi bo rapaz! Igual o coñeces. Un que ten un pendente na orella.
 	do DialogueFunctions.suffer_harm()
 	(Miras ao teu arredor, na procura dun rescate de emerxencia)
 => END
 
 ~ muller
-Cando botas mozo? Unha moza guapa coma ti ha de ter uns cantos pretendentes detrás!
--
+Para cando unha voda? Xa vai sendo hora de buscar mozo, non si?
+Que xa temos unha idade!
 - Estamos niso
-	Antonia: Mira que como non apures váiseche pasar o arroz!
-	Escoita, e por que non lle pides saír ao Eladio? É un mozo importante e cun bo traballo.
-	Se che dá vergoña podo preguntarlle eu por ti, eh? Non me custa nada!
-	if DialogueFunctions.get_var("eladio_passed")
-		do DialogueFunctions.suffer_harm()
-		(Sintes unha arcada. Xa coñeciches a Eladio, non si?)
-	else
-		do DialogueFunctions.set_var("antonia_eladio", true)
-		(Isto pode acabar moi mal... Mellor intentar cambiar de tema antes de que sexa tarde)
+	Antonia: Faime caso a min, que sei disto.
+	A estas alturas non ten sentido poñerse esixente. Aínda se che vai pasar o arroz!
+	do DialogueFunctions.suffer_harm()
+	(Non hai forma de interpretar isto como algo que non sexa un insulto, a verdade)
 - Xa teño
 	do DialogueFunctions.set_var("parella", true)
 	Antonia: E logo tes mozo e non me dis nada!
@@ -146,11 +141,11 @@ Cando botas mozo? Unha moza guapa coma ti ha de ter uns cantos pretendentes detr
 	if DialogueFunctions.get_var("nai_passed")
 		(Non sabes por que, pero intúes que isto poderá ter consecuencias no futuro...)
 - Non me interesa
-	Antonia: Ah... Vale...
-	Non sabía que eras desa clase de mulleres. Aínda que claro...
-	Que non xulgo, eh! Eu son moi moderna para esas cousas. Cada un o seu, non?
-	O que si, teño bastante curiosidade por como funciona... Se non hai un home...?
-	Despois búscoche e explícasme como vai a cousa, porque non consigo velo!
+	Antonia: Ah, vale... Logo os rumores eran certos, non si?
+	Es máis de carne que de peixe. Ou era ao revés?
+	Que non xulgo, eh! Eu son moi moderna para esas cousas. Cada un o seu.
+	O que si, teño bastante curiosidade por como funciona sen home polo medio...?
+	Despois búscoche e explícasme como vai a cousa, porque non o imaxino!
 	do DialogueFunctions.suffer_harm()
 	(Miras ao teu arredor, na procura dun rescate de emerxencia)
 => END
