@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Conflict" load_steps=3 format=3 uid="uid://bf6y4m0cox7jn"]
+
+[ext_resource type="Texture2D" uid="uid://cl4eqq7vxyk43" path="res://resources/aseprite/vello.png" id="1_bidwv"]
+[ext_resource type="Script" uid="uid://comk6kntckb8t" path="res://scripts/conflict.gd" id="1_ui0ie"]
+
+[resource]
+script = ExtResource("1_ui0ie")
+enemy_sprite = ExtResource("1_bidwv")
+enemy_name = &"Vello Manuel"
+metadata/_custom_type_script = "uid://comk6kntckb8t"

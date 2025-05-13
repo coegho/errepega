@@ -1,0 +1,85 @@
+~ start
+{{conflict.enemy_name}} ten ganas de enredar!
+Que queres facer?
+- Que foi, Manuel!
+Manuel: Pois aquí andamos!
+- Home, que remedio! => step1
+- O mesmo digo! => wrong1
+=> END
+
+~ step1
+Manuel: É o que hai!
+- E non hai outra!
+- Aí falaches! => step2
+
+~ wrong1
+Manuel: E non dis pouco!
+- Pouco máis que dicir! => step1
+- E que o digas! => step1
+
+~ step2
+Manuel: E como vai?
+- Non hai queixa! => wrong2
+- Vai indo! => step3
+
+~ wrong2
+Manuel: Non terás queixa ti!
+- E logo de que se queixa? => wrong3
+- Depende do día! => step1
+
+~ wrong3
+Manuel: Pouco me queixo!
+- Se vostede se queixa...! => wrong2
+- Razón non lle falta! => step2
+
+~ step3
+Manuel: Que non é pouco!
+- A vida éche así! => step1
+- E vostede que tal? => step4
+
+~ step4
+Manuel: Aquí andamos!
+- Aínda menos mal! => wrong4
+- Home! E fai ben! => step5
+
+~ wrong4
+Manuel: Sabes o que?
+- A vida éche así! => step1
+- O que? => wrong5
+
+~ wrong5
+Manuel: Que o ollo do cu non ve!
+- Aí pilloume! => step1
+- E sabe cando? => wrong6
+
+~ wrong6
+Manuel: Cando?
+- Cando está cagando! => wrong7
+
+~ wrong7
+(O vello Manuel comeza a escarallarse da risa.)
+- Volvendo ao tema... => step1
+
+~ step5
+Manuel: E iso que andar ando pouco!
+- Xa será menos! => wrong3
+- E aínda menos mal! => step6
+
+~ step6
+Manuel: Si ho! É o que vos salva! (ri)
+- Que perigo ten! => step7
+- E a familia? => step8
+
+~ step7
+Manuel: Non o sabes ti ben!
+- Que dirá a súa muller! => step8
+- Así é como hai que ser! => step1
+
+~ step8
+Manuel: Na casa xa me teñen moi visto!
+- Vémonos, Manuel!
+(O señor Manuel obsérvate uns segundos en silencio, sorrí e asinte coa cabeza satisfeito.)
+(Estira a súa man, recolle solemnemente a túa folla de sinaturas, e estampa unha orgullosa rúbrica.)
+{{player_name}}: Moitas grazas!
+Recibiches a sinatura de {{conflict.enemy_name}}!
+=> END

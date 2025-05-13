@@ -1,11 +1,19 @@
+import "res://resources/dialogue/conflict_manuel.dialogue" as conflict
+
 ~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+
+if DialogueFunctions.get_var("manuel_passed")
+	=> passed
+Manuel: {{player_name}}, que!
+do DialogueFunctions.start_conflict("manuel")
+=>< conflict/start
+do DialogueFunctions.end_conflict()
+do DialogueFunctions.add_signature("Manuel")
+do DialogueFunctions.set_var("manuel_passed", true)
+Manuel: Marcho que teño que marchar!
+Deica logo {{g("rapaz", "rapaza", "rapace")}}!
+=> END
+
+~ passed
+Manuel: Bos días a todos menos a {{g("un", "unha", "unhe")}}! (chisca un ollo)
 => END

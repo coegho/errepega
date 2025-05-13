@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c753476fjnrp6"
+path="res://.godot/imported/conflict_manuel.dialogue-e1a2924f178fd038d1b3c910b822b1ae.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/conflict_manuel.dialogue"
+dest_files=["res://.godot/imported/conflict_manuel.dialogue-e1a2924f178fd038d1b3c910b822b1ae.tres"]
+
+[params]
+
+defaults=true
