@@ -20,3 +20,6 @@ func suffer_harm() -> void:
 	harm_received.emit()
 	if player_health <= 0:
 		player_defeated.emit()
+
+func restore_health() -> void:
+	player_health = 5

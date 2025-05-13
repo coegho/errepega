@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://p0f5gent32ft"]
+[gd_scene load_steps=13 format=3 uid="uid://p0f5gent32ft"]
 
 [ext_resource type="Script" uid="uid://68uoh3fd6625" path="res://ui/conflict/conflict_scene.gd" id="1_1f0hg"]
 [ext_resource type="FontFile" uid="uid://cx6rhtqc4s76h" path="res://resources/fonts/m5x7.ttf" id="1_j06hs"]
 [ext_resource type="Material" uid="uid://deadoxpn212bv" path="res://shaders/defeat.material" id="2_8kn05"]
 [ext_resource type="Texture2D" uid="uid://ktgygxrko26t" path="res://resources/aseprite/sprite_test.png" id="2_smmoj"]
+[ext_resource type="Resource" uid="uid://bqh5vopr052y6" path="res://resources/dialogue/defeat.dialogue" id="2_ueoty"]
 [ext_resource type="Texture2D" uid="uid://3delf3p2xcml" path="res://resources/aseprite/dialogue_panel.png" id="3_j06hs"]
 [ext_resource type="Texture2D" uid="uid://cir5q2cngv1mr" path="res://resources/aseprite/character_sprite.png" id="4_rhbie"]
 [ext_resource type="Texture2D" uid="uid://blh5t3ca3hw82" path="res://resources/aseprite/spoon.png" id="5_cxid7"]
@@ -26,6 +27,7 @@ region = Rect2(16, 0, 8, 0)
 
 [node name="ConflictScene" type="CanvasLayer"]
 script = ExtResource("1_1f0hg")
+defeat_dialogue = ExtResource("2_ueoty")
 
 [node name="Root" type="Control" parent="."]
 unique_name_in_owner = true

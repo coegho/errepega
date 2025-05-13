@@ -7,6 +7,8 @@ class_name ConflictScene extends CanvasLayer
 @onready var flash_rect: ColorRect = %FlashRect
 @onready var root: Control = %Root
 
+@export var defeat_dialogue: DialogueResource
+
 var display_health: int = 5
 
 var spoon_points: Array[Node]
@@ -37,6 +39,8 @@ func _on_harm_received() -> void:
 func _on_player_defeated() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(root.material, "shader_parameter/grayscale", 1, 1)
+	EventBus.end_all_dialogues.emit()
+	DialogueManager.show_dialogue_balloon(defeat_dialogue)
 
 func _on_flash_signal() -> void:
 	var tween = get_tree().create_tween()

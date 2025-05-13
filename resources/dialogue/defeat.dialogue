@@ -1,0 +1,10 @@
+~ start
+A {{player_name}} non lle quedan forzas para seguir!
+% {{player_name}} decidiu que non pagaba a pena o esforzo e voltou para casa.
+% {{player_name}} pensou que para isto era mellor voltar e deitarse na cama.
+% {{player_name}} non atura máis a situación e decidiu marchar para casa.
+% {{player_name}} optou por voltar e deitarse antes de que a situación vaia a peor.
+do DialogueFunctions.end_conflict()
+do DialogueFunctions.restore_health()
+do DialogueFunctions.change_location("casa_prota_dormitorio")
+=> END

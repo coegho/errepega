@@ -37,6 +37,9 @@ func suffer_harm() -> void:
 	PlayerState.suffer_harm()
 	EventBus.flash()
 
+func restore_health() -> void:
+	PlayerState.restore_health()
+
 func add_signature(signer_name: String) -> void:
 	PlayerState.signatures.append(signer_name)
 	EventBus.signature_added.emit()

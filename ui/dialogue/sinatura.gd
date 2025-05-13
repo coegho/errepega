@@ -17,7 +17,7 @@ class_name NameSelectUi extends CanvasLayer
 
 signal menu_closed
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 
 func _ready() -> void:
@@ -56,11 +56,11 @@ func validateInput() -> void:
 	rematarBtn.disabled = ! isInputValid()
 
 
-func _on_nome_input_text_changed(new_text: String) -> void:
+func _on_nome_input_text_changed(_new_text: String) -> void:
 	validateInput()
 
 
-func _on_concello_input_text_changed(new_text: String) -> void:
+func _on_concello_input_text_changed(_new_text: String) -> void:
 	validateInput()
 
 
