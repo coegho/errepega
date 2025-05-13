@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhnhpmj2ls78g"
+path="res://.godot/imported/koala.dialogue-84aad795e4dac97ae2a8f0cbd24918ed.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/koala.dialogue"
+dest_files=["res://.godot/imported/koala.dialogue-84aad795e4dac97ae2a8f0cbd24918ed.tres"]
+
+[params]
+
+defaults=true

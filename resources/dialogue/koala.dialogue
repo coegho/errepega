@@ -1,0 +1,30 @@
+~ start
+{{player_name}} acariciou o koala.
+do DialogueFunctions.restore_health()
+A enerxía de {{player_name}} está ao máximo!
+O koala fuxiu.
+=> END
+
+~ koala1
+É un simpático koala, vivindo unha vida tranquila e sen complicacións.
+=> start
+
+~ koala2
+Este koala está mirando pola xanela para intentar ver unha peli de balde.
+=> start
+
+~ koala3
+Este koala é ambicioso e cun obxectivo claro (comer hoxe máis follas que onte).
+=> start
+
+~ koala4
+Este koala considera que a desmedida ambición do seu veciño será a súa caída.
+=> start
+
+~ koala5
+Este koala é tímido e non quere chamar a atención. Levou un susto cando te viu.
+=> start
+
+~ koala6
+Este koala é algo rebelde e gústalle ir contracorrente, mais non deixa de ser un koala.
+=> start

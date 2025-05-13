@@ -108,7 +108,7 @@ cancel={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://resources/dialogue/sign_example.dialogue", "res://resources/dialogue/conflict_test.dialogue", "res://resources/dialogue/letreiros.dialogue", "res://resources/dialogue/segredos.dialogue", "res://resources/dialogue/casa.dialogue", "res://resources/dialogue/intro.dialogue", "res://resources/dialogue/name_selected.dialogue", "res://resources/dialogue/antonia.dialogue", "res://resources/dialogue/conflict_antonia.dialogue", "res://resources/dialogue/manuel.dialogue", "res://resources/dialogue/conflict_manuel.dialogue", "res://resources/dialogue/defeat.dialogue")
+locale/translations_pot_files=PackedStringArray("res://resources/dialogue/sign_example.dialogue", "res://resources/dialogue/conflict_test.dialogue", "res://resources/dialogue/letreiros.dialogue", "res://resources/dialogue/segredos.dialogue", "res://resources/dialogue/casa.dialogue", "res://resources/dialogue/intro.dialogue", "res://resources/dialogue/name_selected.dialogue", "res://resources/dialogue/antonia.dialogue", "res://resources/dialogue/conflict_antonia.dialogue", "res://resources/dialogue/manuel.dialogue", "res://resources/dialogue/conflict_manuel.dialogue", "res://resources/dialogue/defeat.dialogue", "res://resources/dialogue/koala.dialogue")
 
 [rendering]
 
