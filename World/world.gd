@@ -35,19 +35,15 @@ func change_location(
 	starting_orientation = new_orientation
 	starting_velocity = new_velocity
 	tween.tween_property(flash, "modulate", Color.WHITE, 0.1)
-	tween.tween_callback(func():
-		if current_location:
-			current_location.queue_free()
-	)
+	if current_location:
+		current_location.queue_free()
 	tween.tween_property(flash, "modulate", Color.TRANSPARENT, 0.1)
-	tween.tween_callback(func (): 
-		current_location = new_location.instantiate()
-		add_child(current_location)
-		tilemaps = []
-		for node in current_location.find_children("*", "TileMapLayer"):
-			var layer: TileMapLayer = node
-			tilemaps.append(layer)
-	)
+	current_location = new_location.instantiate()
+	add_child(current_location)
+	tilemaps = []
+	for node in current_location.find_children("*", "TileMapLayer"):
+		var layer: TileMapLayer = node
+		tilemaps.append(layer)
 
 func is_occupied(grid_position: Vector2i) -> bool:
 	# comprobamos tilemaps
