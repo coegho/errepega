@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://p0f5gent32ft"]
+[gd_scene load_steps=12 format=3 uid="uid://p0f5gent32ft"]
 
 [ext_resource type="Script" uid="uid://68uoh3fd6625" path="res://ui/conflict/conflict_scene.gd" id="1_1f0hg"]
 [ext_resource type="FontFile" uid="uid://cx6rhtqc4s76h" path="res://resources/fonts/m5x7.ttf" id="1_j06hs"]
+[ext_resource type="Material" uid="uid://deadoxpn212bv" path="res://shaders/defeat.material" id="2_8kn05"]
 [ext_resource type="Texture2D" uid="uid://ktgygxrko26t" path="res://resources/aseprite/sprite_test.png" id="2_smmoj"]
 [ext_resource type="Texture2D" uid="uid://3delf3p2xcml" path="res://resources/aseprite/dialogue_panel.png" id="3_j06hs"]
 [ext_resource type="Texture2D" uid="uid://cir5q2cngv1mr" path="res://resources/aseprite/character_sprite.png" id="4_rhbie"]
@@ -27,6 +28,8 @@ region = Rect2(16, 0, 8, 0)
 script = ExtResource("1_1f0hg")
 
 [node name="Root" type="Control" parent="."]
+unique_name_in_owner = true
+material = ExtResource("2_8kn05")
 custom_minimum_size = Vector2(160, 144)
 layout_mode = 3
 anchors_preset = 15
@@ -48,6 +51,7 @@ grow_vertical = 2
 
 [node name="EnemySprite" type="TextureRect" parent="Root"]
 unique_name_in_owner = true
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -58,6 +62,7 @@ grow_horizontal = 0
 texture = ExtResource("2_smmoj")
 
 [node name="PlayerSprite" type="TextureRect" parent="Root"]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -90,6 +95,7 @@ offset_bottom = -6.5
 grow_horizontal = 0
 grow_vertical = 2
 text = "Camarada"
+horizontal_alignment = 2
 
 [node name="EnemyName" type="Label" parent="Root"]
 unique_name_in_owner = true
@@ -100,12 +106,13 @@ offset_bottom = 13.0
 text = "Test"
 
 [node name="EnemyState" type="Label" parent="Root"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 3.0
 offset_top = 12.0
 offset_right = 52.0
 offset_bottom = 25.0
-text = "[NORMAL]"
+text = "(non asinou)"
 
 [node name="SpoonBox" type="HBoxContainer" parent="Root"]
 unique_name_in_owner = true

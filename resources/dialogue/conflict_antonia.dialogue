@@ -29,6 +29,7 @@ O meu home levou unha trabada dun deses koalas e ten medo de que se lle infecte.
 Antonia: Que tes aí? Ah, estás recollendo sinaturas?
 Ah, para desfacerse dos koalas! É iso, non si?
 =>< argumento
+do DialogueFunctions.add_signature("Antonia")
 Mira, voucho asinar. Que non se diga que non me preocupo polas causas xustas.
 {{player_name}}: Moitas grazas!
 Recibiches a sinatura de {{conflict.enemy_name}}!

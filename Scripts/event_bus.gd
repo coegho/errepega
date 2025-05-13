@@ -11,6 +11,7 @@ signal dialogue_ended
 signal conflict_started(conflict_name: StringName)
 signal conflict_ended
 signal flash_signal
+signal signature_added
 
 func set_world(new_world: World):
 	_world = new_world

@@ -9,8 +9,21 @@ Manuel: Pois aquí andamos!
 
 ~ step1
 Manuel: É o que hai!
-- E non hai outra!
+- E non hai outra! => step2
 - Aí falaches! => step2
+
+~ fake
+Manuel: É o que hai!
+- E non hai outra! => back
+- Aí falaches! => back
+
+~ back
+do DialogueFunctions.suffer_harm()
+% (Sintes que estás a perdes o tempo... Como saes de aquí?)
+% (Isto xa se dixo... Estás camiñando en círculos?)
+% (Comezas a pensar que estás {{g("atrapado", "atrapada", "atrapade")}} nun bucle infinito)
+% (Terá problemas de memoria... Ou estará tomándoche o pelo?)
+=> step2
 
 ~ wrong1
 Manuel: E non dis pouco!
@@ -25,31 +38,31 @@ Manuel: E como vai?
 ~ wrong2
 Manuel: Non terás queixa ti!
 - E logo de que se queixa? => wrong3
-- Depende do día! => step1
+- Depende do día! => fake
 
 ~ wrong3
 Manuel: Pouco me queixo!
 - Se vostede se queixa...! => wrong2
-- Razón non lle falta! => step2
+- Razón non lle falta! => fake
 
 ~ step3
 Manuel: Que non é pouco!
-- A vida éche así! => step1
+- A vida éche así! => fake
 - E vostede que tal? => step4
 
 ~ step4
 Manuel: Aquí andamos!
-- Aínda menos mal! => wrong4
 - Home! E fai ben! => step5
+- Aínda menos mal! => wrong4
 
 ~ wrong4
 Manuel: Sabes o que?
-- A vida éche así! => step1
+- Sei ben, sei! => fake
 - O que? => wrong5
 
 ~ wrong5
 Manuel: Que o ollo do cu non ve!
-- Aí pilloume! => step1
+- Aí pilloume! => fake
 - E sabe cando? => wrong6
 
 ~ wrong6
@@ -58,7 +71,7 @@ Manuel: Cando?
 
 ~ wrong7
 (O vello Manuel comeza a escarallarse da risa.)
-- Volvendo ao tema... => step1
+- Volvendo ao tema... => fake
 
 ~ step5
 Manuel: E iso que andar ando pouco!
@@ -73,12 +86,13 @@ Manuel: Si ho! É o que vos salva! (ri)
 ~ step7
 Manuel: Non o sabes ti ben!
 - Que dirá a súa muller! => step8
-- Así é como hai que ser! => step1
+- Así é como hai que ser! => fake
 
 ~ step8
 Manuel: Na casa xa me teñen moi visto!
 - Vémonos, Manuel!
 (O señor Manuel obsérvate uns segundos en silencio, sorrí e asinte coa cabeza satisfeito.)
+do DialogueFunctions.add_signature("Manuel")
 (Estira a súa man, recolle solemnemente a túa folla de sinaturas, e estampa unha orgullosa rúbrica.)
 {{player_name}}: Moitas grazas!
 Recibiches a sinatura de {{conflict.enemy_name}}!

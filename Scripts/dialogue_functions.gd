@@ -39,6 +39,7 @@ func suffer_harm() -> void:
 
 func add_signature(signer_name: String) -> void:
 	PlayerState.signatures.append(signer_name)
+	EventBus.signature_added.emit()
 
 func g(home_string: String, muller_string: String, nb_string: String) -> String:
 	match pronoun:

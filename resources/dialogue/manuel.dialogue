@@ -8,7 +8,6 @@ Manuel: {{player_name}}, que!
 do DialogueFunctions.start_conflict("manuel")
 =>< conflict/start
 do DialogueFunctions.end_conflict()
-do DialogueFunctions.add_signature("Manuel")
 do DialogueFunctions.set_var("manuel_passed", true)
 Manuel: Marcho que teño que marchar!
 Deica logo {{g("rapaz", "rapaza", "rapace")}}!
