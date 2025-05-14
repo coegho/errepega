@@ -23,7 +23,6 @@ func walk_logic(delta: float) -> void:
 	var target_position := GridMovement.grid_to_pixel(grid_position)
 	global_position = global_position.move_toward(target_position, delta*speed)
 	if global_position.is_equal_approx(target_position):
-		orientation = velocity
 		velocity = Vector2i.ZERO
 		step_done.emit()
 

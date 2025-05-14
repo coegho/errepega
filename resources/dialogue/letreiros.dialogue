@@ -1,11 +1,10 @@
 ~ aldea
-Concello De {{concello_name}}
-
+Concello De {{concello_name}} => END
 ~ casa_prota
 Casa de {{player_name}}...
 Quen che dera. En realidade é a casa da túa nai. => END
 ~ casa_antonia
-Casa de Antonia => END
+Casa de Antonia e Manuel => END
 ~ casa_lau
 Casa de Lau => END
 ~ casa_ignacio

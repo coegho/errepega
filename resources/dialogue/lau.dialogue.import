@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bqto3idpahl2v"
+path="res://.godot/imported/lau.dialogue-dd972553c4e1cd1b579be940d53749b8.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/lau.dialogue"
+dest_files=["res://.godot/imported/lau.dialogue-dd972553c4e1cd1b579be940d53749b8.tres"]
+
+[params]
+
+defaults=true

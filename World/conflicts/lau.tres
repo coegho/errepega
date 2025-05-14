@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Conflict" load_steps=3 format=3 uid="uid://w7emu0ljehi7"]
+
+[ext_resource type="Script" uid="uid://comk6kntckb8t" path="res://scripts/conflict.gd" id="1_4wdk3"]
+[ext_resource type="Texture2D" uid="uid://drvj30vcbe0f3" path="res://resources/aseprite/lau.png" id="1_isrgb"]
+
+[resource]
+script = ExtResource("1_4wdk3")
+enemy_sprite = ExtResource("1_isrgb")
+enemy_name = &"Programadora Lau"
+metadata/_custom_type_script = "uid://comk6kntckb8t"

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bkn6txbfggmmh"
+path="res://.godot/imported/casa_lau.dialogue-64c677c5daaca0eb031ad65d14ee8a23.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/casa_lau.dialogue"
+dest_files=["res://.godot/imported/casa_lau.dialogue-64c677c5daaca0eb031ad65d14ee8a23.tres"]
+
+[params]
+
+defaults=true

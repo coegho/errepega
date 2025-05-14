@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://1y0f0ml0uqe7"
+path="res://.godot/imported/conflict_lau.dialogue-b51d4a90011f057142221e661a993abe.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/conflict_lau.dialogue"
+dest_files=["res://.godot/imported/conflict_lau.dialogue-b51d4a90011f057142221e661a993abe.tres"]
+
+[params]
+
+defaults=true

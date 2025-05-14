@@ -1,0 +1,21 @@
+import "res://resources/dialogue/conflict_lau.dialogue" as conflict
+
+~ start
+if DialogueFunctions.get_var("lau_passed")
+	=> passed
+Lau: Oes ti! Quen che abriu a porta?
+Ah, debín de deixala aberta cando saín a polo pan...
+En fin, non importa. Queres xogar a algo?
+do DialogueFunctions.start_conflict("lau")
+=>< conflict/start
+do DialogueFunctions.end_conflict()
+do DialogueFunctions.set_var("lau_passed", true)
+Lau: Guau! Paseino xenial!
+Non sabía que había {{g("rapaces", "rapazas", "rapacis")}} tan guais nesta vila!
+Tes conta en Mastodon? Se queres podes crear unha na nosa instancia akko.nyaa.gal...
+
+=> END
+
+~ passed
+Lau: Pódote agregar como {{g("amigo", "amiga", "amigue")}} e xogamos online?
+=> END
