@@ -105,7 +105,9 @@ func apply_dialogue_line() -> void:
 	dialogue_label.dialogue_line = dialogue_line
 
 	responses_menu.hide()
-	responses_menu.responses = dialogue_line.responses
+	# Hide not allowed responses
+	responses_menu.responses = dialogue_line.responses.filter(
+		func (response): return response.is_allowed)
 
 	# Show our balloon
 	balloon.show()

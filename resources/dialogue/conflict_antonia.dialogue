@@ -140,7 +140,7 @@ Que xa temos unha idade!
 	Antonia: E logo tes mozo e non me dis nada!
 	Cando ma vas presentar? Imaxino que a túa nai xa o coñece, non si?
 	Agora teño algo de présa, pero despois pásome pola vosa casa e pregúntovos todo.
-	if DialogueFunctions.get_var("nai_passed")
+	if DialogueFunctions.get_var("nai_passed") == true
 		(Non sabes por que, pero intúes que isto poderá ter consecuencias no futuro...)
 - Non me interesa
 	Antonia: Ah, vale... Logo os rumores eran certos, non si?

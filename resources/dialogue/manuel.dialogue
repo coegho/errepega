@@ -2,7 +2,7 @@ import "res://resources/dialogue/conflict_manuel.dialogue" as conflict
 
 ~ start
 
-if DialogueFunctions.get_var("manuel_passed")
+if DialogueFunctions.get_var("manuel_passed") == true
 	=> passed
 Manuel: {{player_name}}, que!
 do DialogueFunctions.start_conflict("manuel")

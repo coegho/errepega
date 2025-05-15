@@ -29,10 +29,12 @@ func change_location(
 func display_name_select() -> void:
 	EventBus.world.display_name_select()
 
-func get_var(var_name: String) -> bool:
-	return PlayerState.vars.get(var_name) or false
+func get_var(var_name: String) -> Variant:
+	if not PlayerState.vars.has(var_name):
+		return null
+	return PlayerState.vars.get(var_name)
 
-func set_var(var_name: String, value: bool) -> void:
+func set_var(var_name: String, value: Variant) -> void:
 	PlayerState.vars.set(var_name, value)
 
 func suffer_harm() -> void:

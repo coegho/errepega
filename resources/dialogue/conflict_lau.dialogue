@@ -1,4 +1,269 @@
 ~ start
 {{conflict.enemy_name}} quere xogar!
 Que queres facer?
+- A que queres xogar?
+Lau: Xa sei! Podemos improvisar unha sesión de rol! (Saca un libro de regras)
+Eu farei de mestri de xogo. Déixame ver que clases podes escoller...
+Tes por un lado o Vikingo, que é un poderoso e rudo guerreiro corpo a corpo.
+Tes polo outro o Meigo, un hábil feiticeiro que coñece todo tipo de maxias.
+E por último o Tunante, un astuto ladrón que vive á marxe da sociedade.
+Cal queres ser?
+- {{g("Un Vikingo", "Unha vikinga", "Unhe vikingue")}} 
+	do DialogueFunctions.set_var("rpg_class", "viking")
+	Lau: Vaiche a forza bruta, eh? Non te podo culpar!
+- {{g("Un Meigo", "Unha Meiga", "Unhe Meigue")}}
+	do DialogueFunctions.set_var("rpg_class", "witch")
+	Lau: Imos simplificar a maxia se che parece ben...
+- {{g("Un Tunante", "Unha Tunanta", "Unhe Tunanti")}}
+	do DialogueFunctions.set_var("rpg_class", "rogue")
+	Lau: Lembra que tes un bonus apuñalando polas costas!
+Ben, xa cubriches a ficha? Cos atributos e demais? Ah, fáltache o nome da personaxe.
+Como a chamaches?
+- Ulrich Machado de Ferro [if DialogueFunctions.get_var("rpg_class") == "viking" and DialogueFunctions.pronoun == 0]
+	do DialogueFunctions.set_var("rpg_name", "Ulrich")
+	Lau: Ok, anota o nome na ficha e comezamos!
+- Ingrid Cabelo de Lume [if DialogueFunctions.get_var("rpg_class") == "viking" and DialogueFunctions.pronoun == 1]
+	do DialogueFunctions.set_var("rpg_name", "Ingrid")
+	Lau: Ok, anota o nome na ficha e comezamos!
+- Loki Sangue de Xigante [if DialogueFunctions.get_var("rpg_class") == "viking" and DialogueFunctions.pronoun == 2]
+	do DialogueFunctions.set_var("rpg_name", "Loki")
+	Lau: Ok, anota o nome na ficha e comezamos!
+- Ged o Arquimago [if DialogueFunctions.get_var("rpg_class") == "witch" and DialogueFunctions.pronoun == 0]
+	do DialogueFunctions.set_var("rpg_name", "Ged")
+	Lau: Ok, anota o nome na ficha e comezamos!
+- Tenar a Sacerdotisa [if DialogueFunctions.get_var("rpg_class") == "witch" and DialogueFunctions.pronoun == 1]
+	do DialogueFunctions.set_var("rpg_name", "Tenar")
+	Lau: Ok, anota o nome na ficha e comezamos!
+- Orm a Lenda [if DialogueFunctions.get_var("rpg_class") == "witch" and DialogueFunctions.pronoun == 2]
+	do DialogueFunctions.set_var("rpg_name", "Orm")
+	Lau: Ok, anota o nome na ficha e comezamos!
+- Boris Badenov [if DialogueFunctions.get_var("rpg_class") == "rogue" and DialogueFunctions.pronoun == 0]
+	do DialogueFunctions.set_var("rpg_name", "Boris")
+	Lau: Ok, anota o nome na ficha e comezamos!
+- Nataxa Fatale [if DialogueFunctions.get_var("rpg_class") == "rogue" and DialogueFunctions.pronoun == 1]
+	do DialogueFunctions.set_var("rpg_name", "Natasha")
+	Lau: Ok, anota o nome na ficha e comezamos!
+- Alexei Raskolnikov [if DialogueFunctions.get_var("rpg_class") == "rogue" and DialogueFunctions.pronoun == 2]
+	do DialogueFunctions.set_var("rpg_name", "Alexei")
+	Lau: Ok, anota o nome na ficha e comezamos!
+- Óscar Allo [if DialogueFunctions.pronoun == 0]
+	do DialogueFunctions.set_var("rpg_name", "Óscar")
+	Lau: Moi ben... Ei! Non creas que non vin o que fixeches!
+- Vanessa Fadiña [if DialogueFunctions.pronoun == 1]
+	do DialogueFunctions.set_var("rpg_name", "Vanessa")
+	Lau: Moi ben... Ei! Non creas que non vin o que fixeches!
+- Xasmín Gafría [if DialogueFunctions.pronoun == 2]
+	do DialogueFunctions.set_var("rpg_name", "Xasmín")
+	Lau: Moi ben... Ei! Non creas que non vin o que fixeches!
+- {{player_name}}
+	do DialogueFunctions.set_var("rpg_name", DialogueFunctions.player_name)
+	Lau: Xa vexo... Escoller un nome pode ser difícil.
+
+~ escena1
+Moi ben, estás {{g("listo", "lista", "liste")}}? Esta é a situación.
+{{get_var("rpg_name")}} está na taberna dunha pequena aldea chamada... Eeh...
+Chamada {{concello_name}}, por poñerlle algún nome.
+Levas varios días viaxando e este é o teu momento de descanso.
+Que fas?
+- Pido unha cervexa
+	Lau: Ponche unha cervexa ben forte. Das un sorbo.
+	É a mellor cervexa que tomaches en moito tempo! O taberneiro diche que é de importación.
+	De paso ponche unhas tapas para acompañar. Algo de pan e chacina.
+- Busco unha misión
+	Lau: Pregúntaslle ao taberneiro se hai algún encargo.
+	O tipo responde, "ultimamente tivemos algúns problemas con trasnos pola zona".
+- Roubo a alguén [if DialogueFunctions.get_var("rpg_class") == "rogue"]
+	Lau: {{get_var("rpg_name")}} bota unha ollada ao seu arredor.
+	Ves un cliente que non se fixou en ti. Intentas roubarlle a carteira.
+	A dificultade é do 50%.
+	- Tirar o dado
+	%1
+		Lau: Sáeche!
+		Róubaslle a carteira con éxito e nin se decatou.
+		Fas algo máis?
+		- Suficiente
+			Lau: Ben, gañaches 5 pezas de ouro. Anótao no inventario.
+		- Róubolle os pantalóns
+			Lau: Por que quererías...? Eh, a ver, deixa que mire...
+			(Revisando o libro) ten que haber algo nas regras que impida...
+			(Sigh) Vale, intentas roubarlle os pantalóns sen que se decate.
+			A dificultade é do 25%.
+			- Tirar o dado
+			%1
+				Lau: Incríbel. Sáeche. Róubaslle os pantalóns...
+				Non teño moi claro cal era o obxectivo, mais en fin.
+			%3
+				Lau: Fallaches a tirada! (Sorrí maliciosamente)
+				Todos se xiran para observar como intentas baixarlle os pantalóns ao tipo.
+				O cliente alporízase contigo. O taberneiro non quere nin mirarte á cara.
+				do DialogueFunctions.suffer_harm()
+				(Puideches ter parado coa carteira, pero tiveches que ir a lucirte)
+				Lau: Iso pásache por pasarte de {{g("listo", "lista", "liste")}}!
+	%1
+		Lau: Fallas! O tipo dase a volta e mírate con moi mala cara.
+		O taberneiro di, "a próxima vez que fagas algo así vas para a rúa!"
+		do DialogueFunctions.suffer_harm()
+		(Pois si que comeza ben a partida)
+		Lau: Mala sorte, supoño. Xa sairá a próxima.
+	=> escena2
+- Comezo unha pelexa [if DialogueFunctions.get_var("rpg_class") == "viking"]
+	Lau: Ehh... Vale. Ergues os brazos e comezas a buscar un opoñente.
+	Un tipo achégase a ti. É enorme e está cuberto de armadura pesada.
+	Semella que el tamén quere comezar unha pelexa, pero vai moito mellor equipado ca ti.
+	A dificultade é do 33%.
+	- Ataco
+	%1
+		Lau: Contra todo pronóstico, daslle o primeiro golpe.
+		É un golpe certeiro na cabeza. Cae redondo, para sorpresa dos presentes.
+		Quítaslle o elmo, e recoñécelo. É Ivar, vello rival do teu clan. Que faría por aquí?
+		Podes quedar co seu botín. Apunta aí 2 moedas de ouro e unha maza pesada.
+	%2
+		Lau: A túa forza non é suficiente para derrotalo.
+		Méteche unha boa malleira... {{get_var("rpg_name")}} remata no chan semi-inconsciente.
+		do DialogueFunctions.suffer_harm()
+		(Que rabia... Levar unha tunda xa no comezo do xogo!)
+		Lau: Igual non foi unha boa idea, eh?
+		O teu opoñente marcha fachendoso da taberna, mentres ti curas as túas feridas.
+- Leo un libro [if DialogueFunctions.get_var("rpg_class") == "witch"]
+	Lau: Sacas un libro de coñecementos ocultos e poste a lelo.
+	Algúns veciños mírante con curiosidade. Non é habitual ver xente coma ti por aquí.
+	O taberneiro susurra, "señor, teña coidado. A maxia non está ben vista por estas terras".
+	Que fas?
+	- Portareime ben
+		Lau: Gardas o libro, e o ambiente semella acougar un pouco.
+	- Brazos de bebé
+		Lau: Brazos de...? A que te refires?
+		(Revisa o libro) Oh. OH. Vale. Xa entendín.
+		Tira. 50%.
+		- Tirar o dado
+		%
+			Lau: Sáeche o conxuro. Fas uns xestos no aire e...
+			Os brazos do taberneiro comezan a minguar até ser do tamaño de brazos de bebé.
+			O terror apodérase do seu rostro. Afortunadamente para el, é temporal.
+			Os seus brazos volven ao seu tamaño normal. A súa cara segue pálida, iso si.
+			O taberneiro fuxe á cociña, totalmente aterrorizado.
+		%
+			Lau: Fallas a tirada. Fas uns xestos no aire e...
+			Unha pequena explosión aparece entre as túas mans. Caes do asento do impacto.
+			Das contra o chan co cu. Doe bastante! Todos os clientes estante sinalando e rindo.
+			do DialogueFunctions.suffer_harm()
+			(Pois si que comeza ben a partida...)
+			Lau: Mala sorte! Iso pasa por abusar da maxia.
+
+~ escena2
+De súpeto, as portas da taberna ábrense de par en par. Aparece un rapaz noviño.
+"Socorro!", berra. "Os trasnos do bosque secuestraron os meus pais!"
+"Hai {{g("algún aventureiro", "algunha aventureira", "algunhe aventureire")}} na zona {{g("disposto", "disposta", "disposte")}} a axudarme?"
+Que fas?
+- Acepto a misión
+	Lau: Ben falado! O neno achégase a ti e di, "moitas grazas, {{g("meu señor", "miña señora", "miñe señore")}}!"
+- Rexeito a misión
+	Lau: Xa... Vale.
+	Mira, escoita, entendo que a gracia dun xogo de rol é facer o que ti queiras...
+	Pero non teño montada unha historia alternativa, isto é o que temos.
+	Se non aceptas a misión, fasme unha faena. Bótame unha man, vale?
+
+~ escena3
+O neno lévate cara o bosque. Levades un bo anaco andando, cando de súpeto...
+Sodes emboscados por unha violenta banda de trasnos!
+Son moitos e van armados con paus e pedras. O neno está morto de medo.
+Que fas?
+- Ataco [if DialogueFunctions.get_var("rpg_class") == "viking"]
+	Lau: Sacas a túa arma e cargas contra eles.
+	Tira. 75%.
+	- Tirar o dado
+	%1
+		Lau: Fallas! Es {{g("superado", "superada", "superade")}} polos trasnos.
+		Que mala sorte, a verdade. Átante e lévante ao seu campamento.
+		do DialogueFunctions.suffer_harm()
+		(Que malas tiradas. Así non hai quen xogue)
+	%3
+		Lau: Sáeche! Derrotas a todos os trasnos.
+		Deixas algún consciente para preguntarlle onde teñen o seu campamento.
+- Bóla de lume [if DialogueFunctions.get_var("rpg_class") == "witch"]
+	Lau: Lanzas unha poderosa bóla de lume.
+	Tira. 75%.
+	- Tirar o dado
+	%1
+		Lau: Fallas! A bóla de lume provoca un pequeno incendio.
+		Mais non consegues acertar nos trasnos, que se lanzan a por ti.
+		Que mala sorte, a verdade. Átante e lévante ao seu campamento.
+		do DialogueFunctions.suffer_harm()
+		(Que malas tiradas. Así non hai quen xogue)
+	%3
+		Lau: Sáeche! Os trasnos saen voando nunha explosión.
+		Un dos trasnos segue consciente, e pregúntaslle onde teñen o seu campamento.
+- Desaparezo [if DialogueFunctions.get_var("rpg_class") == "rogue"]
+	Lau: Intentas ocultarte entre as sombras para non ser {{g("visto", "vista", "viste")}}.
+	Tira. 75%.
+	- Tirar o dado
+	%1
+		Lau: Fallas! Descúbrente de inmediato e bótanseche enriba.
+		Que mala sorte, a verdade. Átante e lévante ao seu campamento.
+		do DialogueFunctions.suffer_harm()
+		(Que malas tiradas. Así non hai quen xogue)
+	%3
+		Lau: Sáeche! Desapareces da vista dos trasnos.
+		Dende a escuridade vas eliminando trasnos un a un.
+		Cando só queda un, intimídalo para sacarlle onde teñen o seu campamento.
+- Busco líder
+	Lau: Vale, esixes falar co seu líder.
+	Os trasnos míranse os uns aos outros. Deciden aceptar a túa petición.
+	Lévante ao seu campamento, mais apuntándote coas súas armas en todo momento.
+- Entrego neno
+	Lau: O neno? Ah, o rapaz da misión?
+	Ok, entrégaslles o neno como ofrenda. Xesús, que bestia! (sorrí)
+	Acéptano e a cambio da boa vontade, lévante ao seu campamento.
+
+~ escena4
+Chegades ao campamento. Ves varios barrís e tendas de campaña.
+Dunha das tendas de campaña sae e líder, inicialmente oculte polas sombras.
+Cando se achega a ti, descubres que en realidade non é trasno nin humane.
+É unha persoa rapose! Cunha fermosa cola laranxa e cairos afiados...
+E líder prepárase para atacar. Que fas?
+- Ataco
+	Lau: Pfff, é imposíbel que e derrotes. Tira o dado a ver.
+	Dificultade 10%.
+	- Tirar o dado
+	%9
+		Lau: Fallas a tirada! E rapose derrótate e átate.
+		Pasas varios días {{g("atado", "atada", "atade")}} a un poste no campamento trasno.
+	%1
+		Lau: Non pode ser...
+		Pillas por sorpresa ae rapose e semella que tes a vitoria na man.
+		Cando estás a piques de acabar con eli bérrache, "escoita o que teño que dicir!"
+		"Non son o teu inimigo", di. "Abandonarei esta vida de crime se me perdoas a vida".
+		Os seus fermosos ollos raposeiros conmóvente. Es incapaz de matale...
+		Os trasnos recoñecen o teu valor, e fanche un sitio para descansar uns días.
+- Seduzo
+	Lau: Que-que fas que? (ruborízase)
+	Ok. Tira o dado...
+	Dificultade 20%.
+	- Tirar o dado
+	%4
+		Lau: (Respira aliviade) Uff. Fallas a tirada!
+		Intentas seducile, pero ve a través da túa artimaña e non consigues seducile.
+		Nese momento baixas a garda, momento que aproveita para noquearte!
+		Mais non te mata, porque se apiada de ti. Deixa que descanses e te recuperes.
+	%1
+		Lau: Non pode ser...
+		do DialogueFunctions.suffer_harm()
+		(Lau está encarnade como un tomate. Igual non foi unha boa idea?)
+		Lau: Vale, seduces ae rapose. Supoño que {{get_var("rpg_name")}} e eli son moces agora...
+		Quedas uns días no campamento con eli, e os ataques trasnos rematan.
+
+Neses días, coñeces mellor ae rapose, e descubres que non é mala persoa...
+É unhe antigue guerreire chamade Lauren, que é perseguide por un crime que non cometeu.
+Ademais está buscando vingarse da morte do seu irmán, que foi asasinado por...
+Pasa algo? Por que me miras así?
+Vale, recoñézoo. Lauren é e miñe OC. Pero é unha boa personaxe, non si?
+Aínda estou aprendendo a isto de levar partidas de rol...
+... Unha pregunta. Ti non viñeches xogar ao rol, verdade?
+- Sinatura
+Lau: Ah, xa vexo. Estás aquí polo dos koalas!
+Uf si, é un horror. Vin o outro día un vídeo-ensaio sobre os eucaliptos.
+do DialogueFunctions.add_signature("Lau")
+Paréceme terríbel que se poida abusar así do medio ambiente. Asino encantade!
+{{player_name}}: Moitas grazas!
+Recibiches a sinatura de {{conflict.enemy_name}}!
 => END

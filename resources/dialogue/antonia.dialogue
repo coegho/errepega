@@ -1,7 +1,7 @@
 import "res://resources/dialogue/conflict_antonia.dialogue" as conflict
 
 ~ start
-if DialogueFunctions.get_var("antonia_passed")
+if DialogueFunctions.get_var("antonia_passed") == true
 	=> passed
 Antonia: Ai {{player_name}}, alégrome de verte!
 Canto hai que non nos vemos? Que boa oportunidade de poñernos ao día!

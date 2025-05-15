@@ -9,7 +9,7 @@ var concello_name: String = "LOURIDO"
 var player_pronoun: int = ELI
 var player_health: int = 5
 
-var vars: Dictionary[String, bool] = {}
+var vars: Dictionary[String, Variant] = {}
 var signatures: Array[String] = []
 
 signal player_defeated
