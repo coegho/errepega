@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cg2idkxqjw13y"
+path="res://.godot/imported/breixo.dialogue-c2b3c34bf12837f060697a2f142e278c.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/breixo.dialogue"
+dest_files=["res://.godot/imported/breixo.dialogue-c2b3c34bf12837f060697a2f142e278c.tres"]
+
+[params]
+
+defaults=true

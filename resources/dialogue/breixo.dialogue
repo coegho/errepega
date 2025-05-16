@@ -1,0 +1,11 @@
+~ start
+Breixo: Ah! Ola, {{player_name}}!
+Conseguiches todas as sinaturas?
+if DialogueFunctions.total_signatures() >= 4
+	Ah, Xa vexo que si! Ben feito! Agardo que non che dese moito choio...
+	Bo traballo, {{player_name}}!
+	do DialogueFunctions.win_condition()
+else
+	Non... De momento só levas {{DialogueFunctions.total_signatures()}} sinaturas.
+	Volve cando teñas todas.
+=> END

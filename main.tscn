@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhlq4ywx8of6g"]
+
+[ext_resource type="Script" uid="uid://bmsyvh08kyko3" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cpurqitm7umk6" path="res://ui/main_menu.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://3lxfp01agu70" path="res://world/world.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0xm2m")
+world_scene = ExtResource("2_h2yge")
+main_menu_scene = ExtResource("1_ig7tw")
+
+[node name="MainMenu" parent="." instance=ExtResource("1_ig7tw")]
+unique_name_in_owner = true

@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpurqitm7umk6"]
+
+[ext_resource type="Script" uid="uid://ce45kgrfa7h0t" path="res://ui/main_menu.gd" id="1_0dkrt"]
+[ext_resource type="Theme" uid="uid://p2u50kaoqvqa" path="res://ui/theme.tres" id="1_t7e0r"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_0dkrt")
+
+[node name="Menu" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t7e0r")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+
+[node name="StartButton" type="Button" parent="Menu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Iniciar xogo"
+
+[node name="CreditsButton" type="Button" parent="Menu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Créditos"
+
+[node name="Credits" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t7e0r")
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Errepegá"
+
+[node name="Label2" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+text = "Creado por Coegho"
+
+[node name="Label3" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+text = "para a Amorodo Jam 2025."
+
+[node name="Label4" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+text = "Feito 100% en Godot."
+
+[node name="BackButton" type="Button" parent="Credits/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Volver"
+
+[connection signal="pressed" from="Menu/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Credits/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

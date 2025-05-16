@@ -1,15 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://3lxfp01agu70"]
+[gd_scene load_steps=6 format=3 uid="uid://3lxfp01agu70"]
 
 [ext_resource type="Script" uid="uid://5jakq8e4rxxy" path="res://world/world.gd" id="1_6xmxd"]
 [ext_resource type="PackedScene" uid="uid://p0f5gent32ft" path="res://ui/conflict/conflict_scene.tscn" id="2_4717r"]
 [ext_resource type="PackedScene" uid="uid://ony32tctdwju" path="res://world/locations/intro.tscn" id="3_4717r"]
 [ext_resource type="PackedScene" uid="uid://eirvx4yv4f80" path="res://ui/dialogue/sinatura.tscn" id="4_h5o24"]
+[ext_resource type="PackedScene" uid="uid://h4nb0n3p0j2c" path="res://ui/win_condition.tscn" id="5_mmdvd"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_6xmxd")
 conflict_scene = ExtResource("2_4717r")
 starting_location = ExtResource("3_4717r")
 name_select_ui = ExtResource("4_h5o24")
+win_condition_scene = ExtResource("5_mmdvd")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 50

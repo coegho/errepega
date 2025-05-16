@@ -122,3 +122,4 @@ position = Vector2(8, -24)
 vision_range = 5
 dialogue = ExtResource("7_28owr")
 sprite_texture = ExtResource("7_nalko")
+passed_var = "lau_passed"

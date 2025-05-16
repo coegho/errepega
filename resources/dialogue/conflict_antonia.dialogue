@@ -46,7 +46,6 @@ Escoita, e que tal no traballo? Estás a gusto?
 	Antonia: Así se fala! A cultura do esforzo é importante!
 	O meu home sempre di que a xente nova non ten ganas de traballar.
 	Alégrame ver que se equivoca! Que bo exemplo para a xente da aldea.
-	Lémbrasme ao Eladio, o veciño. Ese si que traballa arreo, eh!
 	do DialogueFunctions.suffer_harm()
 	(Sintes un arrepío. Que clase de psicópata afirma que vive para o traballo?)
 - Máis ou menos
@@ -109,14 +108,14 @@ Dime!
 		Se chego a saber que estabas tan desesperado por atopar moza, teríacho proposto antes.
 		Iso si, intenta disimulalo con ela, que iso adoita espantar ás mulleres, eh?
 		do DialogueFunctions.suffer_harm()
-		(Lembra que isto non é un Datesim. Que pretendes conseguir con esta exhibición?)
+		(Lembra que isto non é un Datesim. Que pretendes conseguir con isto?)
 - Xa teño
 	do DialogueFunctions.set_var("parella", true)
 	Antonia: E logo tes moza e non me dis nada!
 	Cando ma vas presentar? Imaxino que a túa nai xa a coñece, non si?
 	Agora teño algo de présa, pero despois pásome pola vosa casa e pregúntovos todo.
-	if not DialogueFunctions.get_var("nai_passed")
-		(Non sabes por que, pero intúes que isto poderá ter consecuencias no futuro...)
+	do DialogueFunctions.suffer_harm()
+	(Intúes que isto poderá ter consecuencias incómodas no futuro...)
 - Non me interesa
 	Antonia: Ah... Vale...
 	Non sabía que eras desa clase de homes. Aínda que claro...

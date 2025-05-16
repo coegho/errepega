@@ -1,3 +1,4 @@
 ~ start
-Perfecto, primeira sinatura conseguida. Agora, a polas 8 restantes.
+do DialogueFunctions.add_signature(DialogueFunctions.player_name)
+Perfecto, primeira sinatura conseguida. Agora, a polas 3 restantes.
 => END

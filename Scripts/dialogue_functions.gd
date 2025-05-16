@@ -48,6 +48,12 @@ func add_signature(signer_name: String) -> void:
 	PlayerState.signatures.append(signer_name)
 	EventBus.signature_added.emit()
 
+func total_signatures() -> int:
+	return PlayerState.signatures.size()
+
+func win_condition() -> void:
+	EventBus.win_condition.emit()
+
 func g(home_string: String, muller_string: String, nb_string: String) -> String:
 	match pronoun:
 		0: return home_string

@@ -17,6 +17,8 @@ func _ready() -> void:
 	interactuable.dialogue = dialogue
 	interactuable.dialogue_title = dialogue_title
 	sprite.texture = sprite_texture
+	if passed_var && PlayerState.vars.get(passed_var):
+		disable_range_vision()
 
 func _on_interaction_started(player: Player) -> void:
 	if turn_when_interacted:

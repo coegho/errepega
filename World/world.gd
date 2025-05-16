@@ -3,6 +3,7 @@ class_name World extends Node2D
 @export var conflict_scene: PackedScene
 @export var starting_location: PackedScene
 @export var name_select_ui: PackedScene
+@export var win_condition_scene: PackedScene
 
 @onready var flash: ColorRect = %Flash
 
@@ -20,6 +21,7 @@ func _init() -> void:
 	EventBus.set_world(self)
 	EventBus.dialogue_started.connect(_on_dialogue_started)
 	EventBus.dialogue_ended.connect(_on_dialogue_ended)
+	EventBus.win_condition.connect(_on_win_condition)
 
 func _ready() -> void:
 	change_location(starting_location, starting_position, starting_orientation, starting_velocity)
@@ -96,4 +98,9 @@ func _on_dialogue_started() -> void:
 
 func _on_dialogue_ended() -> void:
 	open_dialogue = false
+
+func _on_win_condition() -> void:
+	var win = win_condition_scene.instantiate()
+	current_location.queue_free()
+	add_child(win)
 #endregion
