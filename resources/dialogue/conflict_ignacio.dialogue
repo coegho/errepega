@@ -1,0 +1,107 @@
+~ start
+{{conflict.enemy_name}} ten ganas de leria!
+Que queres facer?
+- Dime
+Ignacio: Non terás un piti por aí.
+Este xa se me está acabando e non me quedan máis.
+Entón?
+- Non teño
+	Ignacio: Fas ben, {{g("rapaz", "rapaza", "rapace")}}, fas ben.
+	Fumar é malísimo, nunca fumes. Faime caso a min, que sei do que falo.
+- Non quero
+	Ignacio: Veña, meu... Non fai falla ser así, eh?
+	Eu a ti non che fixen nada. Un pouco de solidariedade cun adicto á nicotina!
+(Dá unha longa calada no seu cigarro. Acto seguido bota o fume pola boca)
+do DialogueFunctions.suffer_harm()
+(Comezas a tusir. O fume é noxento)
+Ignacio: Preciso isto para aturar a mañá.
+Pola noite vou a un garito e xa me sinto mellor... Ha! (sorrí)
+Que queres entón?
+- Sinatura
+Ignacio: Ah, polo dos koalas dis?
+Mira, non me fagas falar diso... A xente non ten nin idea do que fala.
+Eu estou a favor de preservar a natureza, pero cal é o problema cos koalas?
+É que...
+- Son invasores
+	Ignacio: A ver, eu sei que son unha especie de recente incorporación.
+	Pero invasores, en serio? Xa levan uns anos aquí entre nós, non si?
+	En todo caso, eu diría que son unha especie asimilada no ecosistema, non?
+- Son destrutivos
+	Ignacio: Se son parvos de todo, que van ser destrutivos!
+	De feito digo máis, se os deixas sós, acabarán por extinguirse.
+	O problema son os condenados animalistas que se empeñan en salvalos...
+	Algúns animais merecen desaparecer, esa é unha realidade incómoda.
+Iso é algo que a prensa non quere que saibas.
+(Dá outra calada)
+- Que opinas?
+	Ignacio: Que que opino eu?
+	(Ignacio estala os seus dedos, preparándose para soltar a súa chapa)
+	Ignacio: Pois mira meu, é moi sinxelo.
+	=> chapa
+- (Ignoralo)
+	=> ignorar
+=> END
+
+~ explicacion
+do DialogueFunctions.suffer_harm()
+(Sintes inmediatamente que acabas de caer na súa trampa)
+{{player_name}}: A ver, Ignacio, escoita.
+Os koalas son unha especie invasora que chegou da man da eucaliptización do país.
+Compiten coas especies autóctonas e son unha ameaza para o ecosistema en xeral.
+Nunca houbo koalas aquí, e só se manteñen por intereses económicos privados.
+Ademais, a súa superpoboación comeza a supoñer un problema a nivel local.
+Ignacio: Xa sabía eu que ías dicir todo iso!
+É o clásico argumento ecoloprogre. Pero agora vouche explicar eu o problema.
+=> chapa
+
+~ chapa
+É moi fácil ser parte do gando e facer seguidismo do que opina todo o mundo.
+Pero fai falla un tipo especial de perspicacia para recoñecer a realidade.
+E a realidade é que os koalas non son tan malos para a natureza como os pintan.
+De feito, son bastante bos para a industria, por exemplo a textil.
+Nunca mercaches unhas luvas de pelo de koala? Asegúroche que non hai nada máis suave.
+Si, soa un pouco cruel pelar un koala, mais se ese é o prezo do progreso...
+Xa sei que o que digo é un pecado para a doutrina progre que predican algúns.
+Pero a min ninguén me vai acalar, sabes?
+(Dá outra calada)
+- (Ignoralo) => ignorar
+- (Explicar de novo) => explicacion
+
+
+~ ignorar
+Ignacio: Que pasa, non dis nada?
+Pf, non me digas. Quedaches sen máis argumentos, non si?
+Sabes que non podes contradicir o que eu digo e prefires xogar a ignorarme.
+...
+En serio non vas dicir nada máis?
+Boh. A ver {{g("home", "muller", "meu")}}, non me sexas así.
+Se xa sabes que no fondo estamos no mesmo bando, eh?
+Simplemente non me gusta que me digan o que teño que pensar.
+Entendes?
+- (Seguir ignorando)
+	Ignacio: Deixa de ignorarme!
+	É moi cedo pola mañá para xogar a estes xogos, eh?
+	(Miras o reloxo. Son as 12 do mediodía)
+	Ignacio: A ver, dime entón.
+	Por que pensas que debería asinar isto? Explícame ti o dos koalas.
+	Que igual son eu o equivocado e non o sei, eh! Aínda que non creo.
+	- (Ignorar máis)
+		Ignacio: Mira, se vas seguir así marcho, eh?
+		Non fai falla ser tan cruel...
+		Eu a ti non che faltei ao respecto!
+		do DialogueFunctions.suffer_harm()
+		(Comezas a sentir algo de mágoa por el... Claro que igual é a súa intención)
+		Ignacio: Mira, xa chegou. Dame iso.
+		=> sinatura
+	- (Explicar)
+		=> explicacion
+- Sinatura
+	Ignacio: En fin... Vale, veña.
+	=> sinatura
+
+~ sinatura
+do DialogueFunctions.add_signature("Ignacio")
+(Ignacio cólleche a folla de sinaturas e cubre os datos)
+No fondo só tiña ganas de discutir un pouco. Ala, aí che vai.
+{{player_name}}: Moitas grazas!
+Recibiches a sinatura de {{conflict.enemy_name}}!

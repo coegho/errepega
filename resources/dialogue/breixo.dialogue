@@ -1,7 +1,7 @@
 ~ start
 Breixo: Ah! Ola, {{player_name}}!
 Conseguiches todas as sinaturas?
-if DialogueFunctions.total_signatures() >= 4
+if DialogueFunctions.total_signatures() >= 5
 	Ah, Xa vexo que si! Ben feito! Agardo que non che dese moito choio...
 	Bo traballo, {{player_name}}!
 	do DialogueFunctions.win_condition()

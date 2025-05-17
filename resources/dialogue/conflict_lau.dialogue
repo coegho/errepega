@@ -220,22 +220,23 @@ Que fas?
 Chegades ao campamento. Ves varios barrís e tendas de campaña.
 Dunha das tendas de campaña sae e líder, inicialmente oculte polas sombras.
 Cando se achega a ti, descubres que en realidade non é trasno nin humane.
-É unha persoa rapose! Cunha fermosa cola laranxa e cairos afiados...
-E líder prepárase para atacar. Que fas?
+É un enorme e horroroso ogro, cos cairos tortos e un garrote na man.
+O líder prepárase para atacar. Que fas?
 - Ataco
-	Lau: Pfff, é imposíbel que e derrotes. Tira o dado a ver.
+	Lau: Pfff, é imposíbel que o derrotes. Tira o dado a ver.
 	Dificultade 10%.
 	- Tirar o dado
 	%9
-		Lau: Fallas a tirada! E rapose derrótate e átate.
-		Pasas varios días {{g("atado", "atada", "atade")}} a un poste no campamento trasno.
+		Lau: Fallas a tirada! O ogro derrótate e átate.
+		Pasas varias horas {{g("atado", "atada", "atade")}} a un poste no campamento trasno.
+		Até que, de súpeto, unha nova personaxe fai acto de aparición...
 	%1
 		Lau: Non pode ser...
-		Pillas por sorpresa ae rapose e semella que tes a vitoria na man.
-		Cando estás a piques de acabar con eli bérrache, "escoita o que teño que dicir!"
+		Pillas por sorpresa ao ogro e semella que tes a vitoria na man.
+		Cando estás a piques de acabar con el bérrache, "escoita o que teño que dicir!"
 		"Non son o teu inimigo", di. "Abandonarei esta vida de crime se me perdoas a vida".
-		Os seus fermosos ollos raposeiros conmóvente. Es incapaz de matale...
-		Os trasnos recoñecen o teu valor, e fanche un sitio para descansar uns días.
+		Dubidas un segundo, momento que aproveita un dos seus tranos para atacar por sorpresa...
+		Levas un golpe nun xeonllo, caes ao chan. Todo semella perdido, mais entón...
 - Seduzo
 	Lau: Que-que fas que? (ruborízase)
 	Ok. Tira o dado...
@@ -243,17 +244,20 @@ E líder prepárase para atacar. Que fas?
 	- Tirar o dado
 	%4
 		Lau: (Respira aliviade) Uff. Fallas a tirada!
-		Intentas seducile, pero ve a través da túa artimaña e non consigues seducile.
+		Intentas seducilo, pero ve a través da túa artimaña e non o consegues.
 		Nese momento baixas a garda, momento que aproveita para noquearte!
-		Mais non te mata, porque se apiada de ti. Deixa que descanses e te recuperes.
+		O ogro date por morto, e pasas varias horas inconsciente no chan.
+		Cando consegues abrir os ollos, ves que non estás {{g("só", "soa", "soe")}}.
 	%1
-		Lau: Non pode ser...
+		Lau: Non pode ser... Isto ten que ir contra as regras!
 		do DialogueFunctions.suffer_harm()
 		(Lau está encarnade como un tomate. Igual non foi unha boa idea?)
-		Lau: Vale, seduces ae rapose. Supoño que {{get_var("rpg_name")}} e eli son moces agora...
-		Quedas uns días no campamento con eli, e os ataques trasnos rematan.
+		Lau: Vale, seduces ao ogro. Tes un encontro romántico con el á luz das candeas.
+		Algúns dos trasnos comezan a sentir celos, e deciden atacarte! A situación empeora...
+		Mais nese momento aparece unha figura misteriosa disposta a salvarte.
 
-Neses días, coñeces mellor ae rapose, e descubres que non é mala persoa...
+Ves diante de de ti a alguén que non é humane, trasne nin ogre. É unhe humane-rapose.
+Inmediatamente resolve a situación e rescátate, xunto cos pais do rapaz. Preséntase.
 É unhe antigue guerreire chamade Lauren, que é perseguide por un crime que non cometeu.
 Ademais está buscando vingarse da morte do seu irmán, que foi asasinado por...
 Pasa algo? Por que me miras así?

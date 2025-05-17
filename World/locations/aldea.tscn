@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://brjuyuiov4lss"]
+[gd_scene load_steps=17 format=4 uid="uid://brjuyuiov4lss"]
 
 [ext_resource type="Texture2D" uid="uid://dpbxhv1nyxlmq" path="res://resources/aseprite/tileset.png" id="1_66nmr"]
 [ext_resource type="PackedScene" uid="uid://bdnka55ed7m1f" path="res://world/player/player.tscn" id="2_wdsy2"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bwcdqma26766b" path="res://resources/aseprite/cotilla_world.png" id="10_yxtj6"]
 [ext_resource type="PackedScene" uid="uid://cy7b7uix8egmk" path="res://world/entities/koala.tscn" id="11_4wh13"]
 [ext_resource type="Resource" uid="uid://dnh3jk1m7djtg" path="res://resources/dialogue/manuel.dialogue" id="11_6qixe"]
+[ext_resource type="Resource" uid="uid://drdxrc2mbmpjh" path="res://resources/dialogue/ignacio.dialogue" id="12_4tvmk"]
 [ext_resource type="Texture2D" uid="uid://dd0vbfrlvkrj6" path="res://resources/aseprite/vello_world.png" id="12_84ek2"]
+[ext_resource type="Texture2D" uid="uid://d4gswdj42mbbq" path="res://resources/aseprite/vividor_world.png" id="13_43j4j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aolye"]
 texture = ExtResource("1_66nmr")
@@ -261,6 +263,13 @@ dialogue = ExtResource("11_6qixe")
 sprite_texture = ExtResource("12_84ek2")
 passed_var = "manuel_passed"
 orientation = Vector2i(-1, 0)
+
+[node name="Ignacio" parent="." instance=ExtResource("8_wvodu")]
+position = Vector2(184, 184)
+vision_range = 5
+dialogue = ExtResource("12_4tvmk")
+sprite_texture = ExtResource("13_43j4j")
+passed_var = "ignacio_passed"
 
 [node name="Koala1" parent="." instance=ExtResource("11_4wh13")]
 position = Vector2(88, -8)

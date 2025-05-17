@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Conflict" load_steps=3 format=3 uid="uid://c8oj2rhwxdli6"]
+
+[ext_resource type="Texture2D" uid="uid://cie30spxrylmh" path="res://resources/aseprite/vividor.png" id="1_rae1o"]
+[ext_resource type="Script" uid="uid://comk6kntckb8t" path="res://scripts/conflict.gd" id="2_f17eh"]
+
+[resource]
+script = ExtResource("2_f17eh")
+enemy_sprite = ExtResource("1_rae1o")
+enemy_name = &"Vividor Ignacio"
+metadata/_custom_type_script = "uid://comk6kntckb8t"

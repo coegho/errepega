@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://drdxrc2mbmpjh"
+path="res://.godot/imported/ignacio.dialogue-439a699da0355bd32b5fae7dc7c37ff0.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/ignacio.dialogue"
+dest_files=["res://.godot/imported/ignacio.dialogue-439a699da0355bd32b5fae7dc7c37ff0.tres"]
+
+[params]
+
+defaults=true

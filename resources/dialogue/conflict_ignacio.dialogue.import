@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cci4vtxpv660d"
+path="res://.godot/imported/conflict_ignacio.dialogue-a8d1c8c5ef6362a0c7ab4261924e8c2e.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/conflict_ignacio.dialogue"
+dest_files=["res://.godot/imported/conflict_ignacio.dialogue-a8d1c8c5ef6362a0c7ab4261924e8c2e.tres"]
+
+[params]
+
+defaults=true

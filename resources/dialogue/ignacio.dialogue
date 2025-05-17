@@ -1,0 +1,19 @@
+import "res://resources/dialogue/conflict_ignacio.dialogue" as conflict
+
+~ start
+
+if DialogueFunctions.get_var("ignacio_passed") == true
+	=> passed
+Ignacio: Ei! {{player_name}}, non é?
+Mira unha cousa...
+do DialogueFunctions.start_conflict("ignacio")
+=>< conflict/start
+do DialogueFunctions.end_conflict()
+do DialogueFunctions.set_var("ignacio_passed", true)
+Ignacio: E agora dame un pouco de espazo, que aínda me dura a resaca.
+Veña, cóidate meu!
+=> END
+
+~ passed
+Ignacio: Se saes á noite xa nos veremos por aí, eh?
+=> END
