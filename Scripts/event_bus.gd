@@ -15,6 +15,7 @@ signal signature_added
 signal end_all_dialogues
 signal win_condition
 signal back_to_menu
+signal music_requested(music: String)
 
 func set_world(new_world: World):
 	_world = new_world

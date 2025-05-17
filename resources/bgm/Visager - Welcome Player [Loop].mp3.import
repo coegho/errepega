@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgi8j06ngn0aw"
+path="res://.godot/imported/Visager - Welcome Player [Loop].mp3-ffc8cf185235ac5fda517702647f7b41.mp3str"
+
+[deps]
+
+source_file="res://resources/bgm/Visager - Welcome Player [Loop].mp3"
+dest_files=["res://.godot/imported/Visager - Welcome Player [Loop].mp3-ffc8cf185235ac5fda517702647f7b41.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://bkn6txbfggmmh" path="res://resources/dialogue/casa_lau.dialogue" id="5_nqt4v"]
 [ext_resource type="PackedScene" uid="uid://buhycx6qsjo7p" path="res://world/entities/npc.tscn" id="6_ix7xe"]
 [ext_resource type="Resource" uid="uid://cg2idkxqjw13y" path="res://resources/dialogue/breixo.dialogue" id="7_bde6n"]
-[ext_resource type="Texture2D" uid="uid://d16xlb8m1fk0d" path="res://resources/aseprite/lau_world.png" id="8_c02ma"]
+[ext_resource type="Texture2D" uid="uid://d2x8ttyqs6mgq" path="res://resources/aseprite/intelectual_world.png" id="8_bde6n"]
 
 [node name="PlayerHouse" type="Node2D"]
 
@@ -71,5 +71,5 @@ metadata/_custom_type_script = "uid://b7s7drqhfdrjv"
 [node name="Breixo" parent="." instance=ExtResource("6_ix7xe")]
 position = Vector2(24, 24)
 dialogue = ExtResource("7_bde6n")
-sprite_texture = ExtResource("8_c02ma")
+sprite_texture = ExtResource("8_bde6n")
 orientation = Vector2i(1, 0)

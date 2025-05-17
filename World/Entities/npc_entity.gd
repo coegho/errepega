@@ -34,6 +34,7 @@ func player_on_range(player_position: Vector2i) -> bool:
 
 func trigger_player_chase(player: Player) -> void:
 	disable_range_vision()
+	EventBus.music_requested.emit("chased")
 	exclamation_anim.play("exclamation")
 	await exclamation_anim.animation_finished
 	while (player.grid_position - grid_position).length() > 1:

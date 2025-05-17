@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://3lxfp01agu70"]
+[gd_scene load_steps=11 format=3 uid="uid://3lxfp01agu70"]
 
 [ext_resource type="Script" uid="uid://5jakq8e4rxxy" path="res://world/world.gd" id="1_6xmxd"]
 [ext_resource type="PackedScene" uid="uid://p0f5gent32ft" path="res://ui/conflict/conflict_scene.tscn" id="2_4717r"]
 [ext_resource type="PackedScene" uid="uid://ony32tctdwju" path="res://world/locations/intro.tscn" id="3_4717r"]
 [ext_resource type="PackedScene" uid="uid://eirvx4yv4f80" path="res://ui/dialogue/sinatura.tscn" id="4_h5o24"]
 [ext_resource type="PackedScene" uid="uid://h4nb0n3p0j2c" path="res://ui/win_condition.tscn" id="5_mmdvd"]
+[ext_resource type="AudioStream" uid="uid://bf71u0gs4t5am" path="res://resources/sound/door.wav" id="6_fn3g3"]
+[ext_resource type="AudioStream" uid="uid://drfjbmdf23grw" path="res://resources/bgm/Visager - Battle! [Loop].mp3" id="7_sc4t8"]
+[ext_resource type="AudioStream" uid="uid://5acp3nff4bda" path="res://resources/bgm/LOOP_Quirky Companion.wav" id="8_4papg"]
+[ext_resource type="AudioStream" uid="uid://dalji68f8hgrs" path="res://resources/bgm/Visager - We Can Do It! [Loop].mp3" id="9_fyhu2"]
+[ext_resource type="AudioStream" uid="uid://dgi8j06ngn0aw" path="res://resources/bgm/Visager - Welcome Player [Loop].mp3" id="10_fyhu2"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_6xmxd")
@@ -23,3 +28,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_fn3g3")
+
+[node name="BattleMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_sc4t8")
+
+[node name="BreixoMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_4papg")
+
+[node name="NormalMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_fyhu2")
+
+[node name="ChasedMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_fyhu2")

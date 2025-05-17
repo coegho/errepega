@@ -1,5 +1,5 @@
 ~ start
-
+do EventBus.music_requested.emit("breixo")
 * ring ring *
 Clic!
 Breixo: Ei boas, que tal? Mira, son Breixo.
@@ -18,6 +18,7 @@ Clic!
 => teleport
 
 ~ teleport
+do EventBus.music_requested.emit("normal")
 do DialogueFunctions.change_location("casa_prota_dormitorio")
 => END
 

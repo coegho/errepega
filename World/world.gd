@@ -6,6 +6,11 @@ class_name World extends Node2D
 @export var win_condition_scene: PackedScene
 
 @onready var flash: ColorRect = %Flash
+@onready var door_sound: AudioStreamPlayer = %DoorSound
+@onready var normal_music: AudioStreamPlayer = %NormalMusic
+@onready var battle_music: AudioStreamPlayer = %BattleMusic
+@onready var breixo_music: AudioStreamPlayer = %BreixoMusic
+@onready var chased_music: AudioStreamPlayer = %ChasedMusic
 
 var starting_position: Vector2i = Vector2i.ZERO
 var current_location: Node
@@ -22,6 +27,7 @@ func _init() -> void:
 	EventBus.dialogue_started.connect(_on_dialogue_started)
 	EventBus.dialogue_ended.connect(_on_dialogue_ended)
 	EventBus.win_condition.connect(_on_win_condition)
+	EventBus.music_requested.connect(_on_music_requested)
 
 func _ready() -> void:
 	change_location(starting_location, starting_position, starting_orientation, starting_velocity)
@@ -36,6 +42,7 @@ func change_location(
 	starting_position = teleport_to_position
 	starting_orientation = new_orientation
 	starting_velocity = new_velocity
+	door_sound.play()
 	tween.tween_property(flash, "modulate", Color.WHITE, 0.1)
 	if current_location:
 		current_location.queue_free()
@@ -90,6 +97,17 @@ func display_name_select() -> void:
 
 func is_movement_blocked() -> bool:
 	return open_dialogue || open_name_select
+
+func _on_music_requested(music: String) -> void:
+	normal_music.stop()
+	battle_music.stop()
+	breixo_music.stop()
+	chased_music.stop()
+	match music:
+		"normal": normal_music.play()
+		"battle": battle_music.play()
+		"breixo": breixo_music.play()
+		"chased": chased_music.play()
 
 #region signals
 

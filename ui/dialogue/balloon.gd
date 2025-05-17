@@ -52,6 +52,7 @@ var mutation_cooldown: Timer = Timer.new()
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+signal next_line_signal
 
 func _ready() -> void:
 	balloon.hide()
@@ -87,6 +88,7 @@ func start(dialogue_resource: DialogueResource, title: String, extra_game_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
 	EventBus.dialogue_started.emit()
+	next_line_signal.emit()
 	self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
 
 
@@ -134,6 +136,7 @@ func apply_dialogue_line() -> void:
 
 ## Go to the next line
 func next(next_id: String) -> void:
+	next_line_signal.emit()
 	self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
 
 

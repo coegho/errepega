@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drfjbmdf23grw"
+path="res://.godot/imported/Visager - Battle! [Loop].mp3-ee10f9b280263615107e2fafb0ea5e33.mp3str"
+
+[deps]
+
+source_file="res://resources/bgm/Visager - Battle! [Loop].mp3"
+dest_files=["res://.godot/imported/Visager - Battle! [Loop].mp3-ee10f9b280263615107e2fafb0ea5e33.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

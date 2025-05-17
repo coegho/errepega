@@ -156,7 +156,8 @@ De súpeto, as portas da taberna ábrense de par en par. Aparece un rapaz noviñ
 "Hai {{g("algún aventureiro", "algunha aventureira", "algunhe aventureire")}} na zona {{g("disposto", "disposta", "disposte")}} a axudarme?"
 Que fas?
 - Acepto a misión
-	Lau: Ben falado! O neno achégase a ti e di, "moitas grazas, {{g("meu señor", "miña señora", "miñe señore")}}!"
+	Lau: Ben falado!
+	O neno achégase a ti e di, "moitas grazas, {{g("meu señor", "miña señora", "miñe señore")}}!"
 - Rexeito a misión
 	Lau: Xa... Vale.
 	Mira, escoita, entendo que a gracia dun xogo de rol é facer o que ti queiras...

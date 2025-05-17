@@ -43,10 +43,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_t7e0r")
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
 layout_mode = 2
@@ -67,6 +67,11 @@ text = "para a Amorodo Jam 2025."
 [node name="Label4" type="Label" parent="Credits/VBoxContainer"]
 layout_mode = 2
 text = "Feito 100% en Godot."
+
+[node name="Label5" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+text = "Música feita por Visager
+e Steven Melin"
 
 [node name="BackButton" type="Button" parent="Credits/VBoxContainer"]
 unique_name_in_owner = true

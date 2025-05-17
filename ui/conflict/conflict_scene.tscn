@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://p0f5gent32ft"]
+[gd_scene load_steps=14 format=3 uid="uid://p0f5gent32ft"]
 
 [ext_resource type="Script" uid="uid://68uoh3fd6625" path="res://ui/conflict/conflict_scene.gd" id="1_1f0hg"]
 [ext_resource type="FontFile" uid="uid://cx6rhtqc4s76h" path="res://resources/fonts/m5x7.ttf" id="1_j06hs"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://3delf3p2xcml" path="res://resources/aseprite/dialogue_panel.png" id="3_j06hs"]
 [ext_resource type="Texture2D" uid="uid://cir5q2cngv1mr" path="res://resources/aseprite/character_sprite.png" id="4_rhbie"]
 [ext_resource type="Texture2D" uid="uid://blh5t3ca3hw82" path="res://resources/aseprite/spoon.png" id="5_cxid7"]
+[ext_resource type="AudioStream" uid="uid://oi6t4168r2hy" path="res://resources/sound/explosion.wav" id="9_ikk1i"]
 
 [sub_resource type="Theme" id="Theme_cxid7"]
 Label/colors/font_color = Color(0.133333, 0.12549, 0.203922, 1)
@@ -164,3 +165,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_ikk1i")
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
